@@ -1,3 +1,19 @@
+#    Copyright (C) 2018  Chris Rush
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+
 import Adafruit_BMP.BMP085 as BMP085 #Works for both the BMP085 and BMP180 sensors
 import Adafruit_DHT # this library works for DHT11 DHT22 and AM2302 sensors
 
@@ -14,7 +30,7 @@ pin = 4 #DHT22 data pin on the raspberry pi
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/') # this tells the program what url triggers the function when a request is made
 def index():
         humidity, temperature = Adafruit_DHT.read_retry(dh22_sensor, pin) #get the values from the sensor
         humidity ='{:.2f}'.format(humidity) #convert value to two decimal places
