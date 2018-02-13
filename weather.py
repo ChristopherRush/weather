@@ -23,8 +23,10 @@ bmp_device = 119
 
 from flask import Flask, render_template
 
-if bus.read_byte(bmp_device):
+if bus.read_byte(bmp_device) == True:
     bmp_sensor = BMP085.BMP085()
+else:
+    pass
 dh22_sensor = Adafruit_DHT.DHT22
 
 
