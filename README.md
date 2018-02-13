@@ -12,7 +12,7 @@ This project uses the Adafruit BMP180 pressure sensor and also the DHT22 tempera
 
 ## Software Installation
 
-This project run on the latest version of Raspbian OS for the Raspberry Pi. Make sure you run 'sudo apt-get update' before installing the following libraries. You will need to run the following commands in the terminal window to install the libraries for the weather sensors.
+This project runs on the latest version of Raspbian OS for the Raspberry Pi. Make sure you run `sudo apt-get update` before installing the following libraries. You will need to run the following commands in the terminal window to install the libraries for the weather sensors.
 
 ### Adafruit BMP180
 
@@ -38,3 +38,21 @@ By default Flask is already installed on the latest version of Raspbian OS, howe
 ```
 sudo apt-get install python3-flask
 ```
+
+### Weather Station install
+
+To download the weather station project files to your Raspberry Pi type the following in the terminal window:
+
+```
+git clone https://github.com/ChristopherRush/weather.git
+
+```
+
+To run the flash web server:
+
+```
+cd weather
+sudo python weather.py
+```
+
+## Troubleshooting
