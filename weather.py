@@ -21,7 +21,8 @@ bus = smbus.SMBus(1)
 
 from flask import Flask, render_template
 
-bmp_sensor = BMP085.BMP085()
+if bus.read_byte(bmp_device):
+    bmp_sensor = BMP085.BMP085()
 dh22_sensor = Adafruit_DHT.DHT22
 
 bmp_device = 119
