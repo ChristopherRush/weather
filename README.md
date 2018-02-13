@@ -4,7 +4,7 @@
 # Pi Supply Weather Station
 
 
-This project uses the Adafruit BMP180 pressure sensor and also the DHT22 temperature/humidity sensor to create a basic weather station using the Raspberry Pi.
+This project uses the Adafruit BMP180 pressure sensor and also the DHT22 temperature/humidity sensor to create a basic weather station using the Raspberry Pi. The front end of the weather station uses a web server provided by Flask and programmed in Python.
 
 ## Hardware setup
 
@@ -49,7 +49,7 @@ git clone https://github.com/ChristopherRush/weather.git
 
 ```
 
-To run the flash web server:
+To run the Flask web server:
 
 ```
 cd weather
