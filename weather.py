@@ -28,7 +28,7 @@ try:
         bmp_sensor = BMP085.BMP085()
 except:
     pass
-        
+
 dh22_sensor = Adafruit_DHT.DHT22
 
 
@@ -51,18 +51,19 @@ def index():
         humidity ='{:.2f}'.format(humidity) #convert value to two decimal places
         temperature ='{:.1f}'.format(temperature) #convert value to one decimal place
 
+        try:
+            if bus.read_byte(bmp_device): #check to see if the BMP sensor is attached decimal 119 hex 0x77 address
 
-        if bus.read_byte(bmp_device): #check to see if the BMP sensor is attached decimal 119 hex 0x77 address
-
-            temp = bmp_sensor.read_temperature() #read the temperature from the BMP sensor in celcius
-            pressure = bmp_sensor.read_pressure() #read the pressure from the BMP sensor
-            altitude = bmp_sensor.read_altitude() #read teh altitude value from the BMP sensor in meters
-            altitude = '{:.2f}'.format(altitude) #convert the altitude value to two decimal places
-        else: #if the sensor is not conencted then return null values
-            temp = 0
-            pressure = 0
-            altitude = 0
-
+                temp = bmp_sensor.read_temperature() #read the temperature from the BMP sensor in celcius
+                pressure = bmp_sensor.read_pressure() #read the pressure from the BMP sensor
+                altitude = bmp_sensor.read_altitude() #read teh altitude value from the BMP sensor in meters
+                altitude = '{:.2f}'.format(altitude) #convert the altitude value to two decimal places
+            else: #if the sensor is not conencted then return null values
+                temp = 0
+                pressure = 0
+                altitude = 0
+        except:
+            pass
 
 
 
