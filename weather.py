@@ -53,5 +53,5 @@ def index():
 
 if __name__ == '__main__':
         #app.run(debug=True, host='0.0.0.0')
-        app.config['SERVER_NAME'] = 'http://local.weather:5000'
+        app.config['SERVER_NAME'] = 'myapp.dev:5000'
         app.run(host=app.config['SERVER_NAME'], port=5000, debug=True)
