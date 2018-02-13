@@ -1,12 +1,18 @@
 # Pi Supply Weather Station
 
+![pi-supply-logo1](https://www.pi-supply.com/wp-content/uploads/2015/11/pi-supply-logo1.png)
+
 This project uses the Adafruit BMP180 pressure sensor and also the DHT22 temperature/humidity sensor to create a basic weather station using the Raspberry Pi.
+
+## Hardware setup
+
+
 
 ## Software Installation
 
 This project run on the latest version of Raspbian OS for the Raspberry Pi. Make sure you run 'sudo apt-get update' before installing the following libraries. You will need to run the following commands in the terminal window to install the libraries for the weather sensors.
 
-###A dafruit BMP180
+### Adafruit BMP180
 
 ```
 git clone https://github.com/adafruit/Adafruit_Python_BMP.git
