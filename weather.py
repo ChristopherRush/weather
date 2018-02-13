@@ -19,13 +19,15 @@ import Adafruit_DHT # this library works for DHT11 DHT22 and AM2302 sensors
 
 bus = smbus.SMBus(1)
 
+bmp_device = 119
+
 from flask import Flask, render_template
 
 if bus.read_byte(bmp_device):
     bmp_sensor = BMP085.BMP085()
 dh22_sensor = Adafruit_DHT.DHT22
 
-bmp_device = 119
+
 pin = 4 #DHT22 data pin on the raspberry pi
 
 #temp = sensor.read_temperature()
