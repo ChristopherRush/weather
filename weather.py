@@ -58,12 +58,13 @@ def index():
                 pressure = bmp_sensor.read_pressure() #read the pressure from the BMP sensor
                 altitude = bmp_sensor.read_altitude() #read teh altitude value from the BMP sensor in meters
                 altitude = '{:.2f}'.format(altitude) #convert the altitude value to two decimal places
-            else: #if the sensor is not conencted then return null values
-                temp = 0
-                pressure = 0
-                altitude = 0
+            #else: #if the sensor is not conencted then return null values
+
         except:
             pass
+            temp = 0
+            pressure = 0
+            altitude = 0
 
 
 
