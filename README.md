@@ -8,6 +8,7 @@ This project uses the Adafruit BMP180 pressure sensor and also the DHT22 tempera
 
 ## Hardware setup
 
+![weather station](https://www.pi-supply.com/wp-content/uploads/2018/02/fritz_bb.png)
 
 
 ## Software Installation
