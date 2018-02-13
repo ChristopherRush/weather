@@ -19,14 +19,14 @@ import Adafruit_DHT # this library works for DHT11 DHT22 and AM2302 sensors
 
 bus = smbus.SMBus(1)
 
-bmp_device = 119
+bmp_device = 119 #i2c address in decimal
 
 from flask import Flask, render_template
 
-try:
-    if bus.read_byte(bmp_device):
+try: #check to see if the device is connected
+    if bus.read_byte(bmp_device): #if i2c device is connected create device object
         bmp_sensor = BMP085.BMP085()
-except:
+except: #do nothing if sensor is not connected
     pass
 
 dh22_sensor = Adafruit_DHT.DHT22
@@ -58,14 +58,12 @@ def index():
                 pressure = bmp_sensor.read_pressure() #read the pressure from the BMP sensor
                 altitude = bmp_sensor.read_altitude() #read teh altitude value from the BMP sensor in meters
                 altitude = '{:.2f}'.format(altitude) #convert the altitude value to two decimal places
-            #else: #if the sensor is not conencted then return null values
 
-        except:
-            pass
+        except: #if the device is not connected send null values
             temp = 0
             pressure = 0
             altitude = 0
-
+            pass
 
 
         #variables to pass through to the web page
