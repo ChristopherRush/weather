@@ -44,7 +44,7 @@ def index():
         humidity ='{:.2f}'.format(humidity) #convert value to two decimal places
         temperature ='{:.1f}'.format(temperature) #convert value to one decimal place
 
-        bus.read_byte(device)
+        bus.read_byte(bmp_device)
         if hex(bmp_device) == 0x77:
             print (hex(bmp_device))
             temp = bmp_sensor.read_temperature() #read the temperature from the BMP sensor in celcius
