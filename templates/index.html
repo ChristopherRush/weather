@@ -1,0 +1,47 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="refresh" content="5">
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}"">
+
+
+</head>
+
+  <body>
+
+        <h1> Pi Supply Weather Station</h1>
+  <div id="wrapper">
+        <h1>Adafruit BMP180 Sensor</h1>
+        <div class="block">
+                <h1>Temperature:</h1>
+                <h2>{{ temp }} &#8451</h2>
+        </div>
+
+
+        <div class="block">
+                <h1>Pressure:</h1>
+                <h2>{{ pressure }} hPa</h2>
+        </div>
+
+        <div class="block">
+                <h1>Altitude:</h1>
+                <h2>{{ altitude }} m</h2>
+        </div>
+</div>
+
+<div id="dht22">
+         <h1> DHT22 Sensor Readings</h1>
+        <div class="block">
+                <h1>Temperature:</h1>
+                <h2>{{ temperature }} &#8451</h2>
+        </div>
+
+        <div class="block">
+                <h1>Humidity:</h1>
+                <h2>{{ humidity }} %</h2>
+        </div>
+
+  </div>
+  </body>
+  </html>

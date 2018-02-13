@@ -1,0 +1,17 @@
+#wrapper {
+width: 100%;
+float: left;
+margin-top: 50px;
+}
+
+.block {
+width: 25%;
+float: left;
+}
+
+#dht22 {
+width: 100%;
+float: left;
+clear: left;
+margin-top: 50px;
+}
