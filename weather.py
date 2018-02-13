@@ -45,8 +45,8 @@ def index():
         temperature ='{:.1f}'.format(temperature) #convert value to one decimal place
 
         bus.read_byte(device)
-        if hex(device) == 0x77:
-            print (hex(device))
+        if hex(bmp_device) == 0x77:
+            print (hex(bmp_device))
             temp = bmp_sensor.read_temperature() #read the temperature from the BMP sensor in celcius
             pressure = bmp_sensor.read_pressure() #read the pressure from the BMP sensor
             altitude = bmp_sensor.read_altitude() #read teh altitude value from the BMP sensor in meters
