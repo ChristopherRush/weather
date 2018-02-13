@@ -52,6 +52,6 @@ def index():
         return render_template('index.html', **templateData) #when a html request has been made return these values
 
 if __name__ == '__main__':
-        app.run(debug=True, host='localhost')
+        app.run(debug=True)
         #app.config['SERVER_NAME'] = 'myapp.local'
         #app.run(host=app.config['SERVER_NAME'], port=5000, debug=True)
