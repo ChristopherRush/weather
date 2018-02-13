@@ -44,13 +44,20 @@ def index():
         humidity ='{:.2f}'.format(humidity) #convert value to two decimal places
         temperature ='{:.1f}'.format(temperature) #convert value to one decimal place
 
-        bus.read_byte(bmp_device)
-        if hex(bmp_device) == 0x77:
-            print (hex(bmp_device))
+
+        if bus.read_byte(bmp_device):
+
             temp = bmp_sensor.read_temperature() #read the temperature from the BMP sensor in celcius
             pressure = bmp_sensor.read_pressure() #read the pressure from the BMP sensor
             altitude = bmp_sensor.read_altitude() #read teh altitude value from the BMP sensor in meters
             altitude = '{:.2f}'.format(altitude) #convert the altitude value to two decimal places
+        else:
+            temp = 0
+            pressure = 0
+            altitude = 0
+
+
+
 
         #variables to pass through to the web page
         templateData = {
