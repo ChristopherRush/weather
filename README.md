@@ -118,7 +118,7 @@ To add a new guage you will need to create a new div with id and class.
 <div id="gauge" class="gauge">
 ```
 
-Add teh following to the css file to style each gauage element. The id element will change the individual gauge block and as such will require a unique id where as the class will style all guage element the same. Note: currently the id is not used in the css.
+Add the following to the css file to style each gauge element. The id element will change the individual gauge block and as such will require a unique id where as the class will style all gauge element the same. Note: currently the id is not used in the css.
 
 ```css
 .gauge {
@@ -131,7 +131,7 @@ Add teh following to the css file to style each gauage element. The id element w
 
 JustGuage plugin is licensed under the MIT license
 
-## PiJuice Power Saving
+## PiJuice
 
 
 
