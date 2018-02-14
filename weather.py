@@ -29,6 +29,7 @@ try: #check to see if the device is connected
 except: #do nothing if sensor is not connected
     pass
 
+
 dh22_sensor = Adafruit_DHT.DHT22
 
 
@@ -46,35 +47,39 @@ app = Flask(__name__)
 
 @app.route('/') # this tells the program what url triggers the function when a request is made
 def index():
-
+    try:
         humidity, temperature = Adafruit_DHT.read_retry(dh22_sensor, pin) #get the values from the sensor
         humidity ='{:.2f}'.format(humidity) #convert value to two decimal places
         temperature ='{:.1f}'.format(temperature) #convert value to one decimal place
+    except:
+        humidity = 0
+        temperature = 0
+        pass
 
-        try:
-            if bus.read_byte(bmp_device): #check to see if the BMP sensor is attached decimal 119 hex 0x77 address
+    try:
+        if bus.read_byte(bmp_device): #check to see if the BMP sensor is attached decimal 119 hex 0x77 address
 
-                temp = bmp_sensor.read_temperature() #read the temperature from the BMP sensor in celcius
-                pressure = bmp_sensor.read_pressure() #read the pressure from the BMP sensor
-                altitude = bmp_sensor.read_altitude() #read teh altitude value from the BMP sensor in meters
-                altitude = '{:.2f}'.format(altitude) #convert the altitude value to two decimal places
+            temp = bmp_sensor.read_temperature() #read the temperature from the BMP sensor in celcius
+            pressure = bmp_sensor.read_pressure() #read the pressure from the BMP sensor
+            altitude = bmp_sensor.read_altitude() #read teh altitude value from the BMP sensor in meters
+            altitude = '{:.2f}'.format(altitude) #convert the altitude value to two decimal places
 
-        except: #if the device is not connected send null values
-            temp = 0
-            pressure = 0
-            altitude = 0
-            pass
+    except: #if the device is not connected send null values
+        temp = 0
+        pressure = 0
+        altitude = 0
+        pass
 
 
-        #variables to pass through to the web page
-        templateData = {
-                'temp' : temp,
-                'pressure' : pressure,
-                'altitude' : altitude,
-                'humidity' : humidity,
-                'temperature' : temperature
-        }
-        return render_template('index.html', **templateData) #when a html request has been made return these values
+    #variables to pass through to the web page
+    templateData = {
+            'temp' : temp,
+            'pressure' : pressure,
+            'altitude' : altitude,
+            'humidity' : humidity,
+            'temperature' : temperature
+    }
+    return render_template('index.html', **templateData) #when a html request has been made return these values
 
 if __name__ == '__main__':
         app.run(debug=True, host='0.0.0.0')

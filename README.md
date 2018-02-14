@@ -8,6 +8,8 @@ This project uses the Adafruit BMP180 pressure sensor and also the DHT22 tempera
 
 ## Hardware setup
 
+All sensors must be connected to the Raspberry Pi prior to running the Flaks server and cannot Plug 'n' Play on teh go.
+
 ![weather station](https://www.pi-supply.com/wp-content/uploads/2018/02/fritz_bb.png)
 
 
@@ -17,7 +19,7 @@ This project runs on the latest version of Raspbian OS for the Raspberry Pi. Mak
 
 ### Auto Installation
 
-Just run the following line in the terminal to automatically install all the libraries and project files to the Raspberyr Pi.
+Just run the following line in the terminal to automatically install all the libraries and project files to the Raspberry Pi.
 
 ```bash
 # Run this line and the weather station will be setup and installed
@@ -36,7 +38,7 @@ sudo python setup.py install
 
 ```bash
 git clone https://github.com/adafruit/Adafruit_Python_DHT.git
-cd Adafruit_Python_BMP
+cd Adafruit_Python_DHT
 sudo python setup.py install
 ```
 
