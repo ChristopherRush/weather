@@ -19,7 +19,7 @@ This project runs on the latest version of Raspbian OS for the Raspberry Pi. Mak
 
 Just run the following line in the terminal to automatically install all the libraries and project files to the Raspberyr Pi.
 
-```
+```bash
 # Run this line and the weather station will be setup and installed
 curl -sSL https://raw.githubusercontent.com/ChristopherRush/weather/master/install.sh | sudo bash
 ```
