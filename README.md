@@ -40,6 +40,20 @@ By default Flask is already installed on the latest version of Raspbian OS, howe
 sudo apt-get install python3-flask
 ```
 
+Flask had a specific file structure that needs to be met in order for all the files to be located for the web server. Here is the file structure in its simplest terms:
+
+- app.py
+- config.py
+- requirements.txt
+  - static/
+    - css/
+  - templates
+    - index.html
+
+For further information visit (http://exploreflask.com/en/latest/organizing.html)
+
+
+
 ### Weather Station install
 
 To download the weather station project files to your Raspberry Pi type the following in the terminal window:
