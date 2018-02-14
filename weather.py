@@ -62,13 +62,13 @@ def index():
     try:
         if bus.read_byte(bmp_device): #check to see if the BMP sensor is attached decimal 119 hex 0x77 address
 
-            temp = bmp_sensor.read_temperature() #read the temperature from the BMP sensor in celcius
+            global temp = bmp_sensor.read_temperature() #read the temperature from the BMP sensor in celcius
             pressure = bmp_sensor.read_pressure() #read the pressure from the BMP sensor
             altitude = bmp_sensor.read_altitude() #read teh altitude value from the BMP sensor in meters
             altitude = '{:.2f}'.format(altitude) #convert the altitude value to two decimal places
 
     except: #if the device is not connected send null values
-        temp = 0
+        global temp = 0
         pressure = 0
         altitude = 0
         pass
