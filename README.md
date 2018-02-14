@@ -102,6 +102,9 @@ By default this project has the ability to refresh the web page every 5 seconds 
 <meta http-equiv="refresh" content="5">
 ```
 
+## PiJuice Power Saving
+
+
 
 
 ## Troubleshooting
