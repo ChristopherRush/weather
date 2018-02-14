@@ -83,6 +83,14 @@ sudo python weather.py
 To view the webpage you will need to go to the Raspberry Pi's IP address on your local network such as http://192.168.0.23 yours may differ. You can find your IP address from the terminal window on the Raspberry Pi by typing in the following command:
 
 ```
+#Wi-Fi connection
+ifconfig wlan0
+
+#Ethernet
+ifconfig eth0
+```
+
+![ipaddress](https://www.pi-supply.com/wp-content/uploads/2018/02/Screen-Shot-2018-02-14-at-11.11.06.png)
 
 
 ## Troubleshooting
