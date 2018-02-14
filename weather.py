@@ -21,6 +21,8 @@ bus = smbus.SMBus(1)
 
 bmp_device = 119 #i2c address in decimal
 
+global temp
+
 from flask import Flask, render_template
 
 try: #check to see if the device is connected
@@ -62,13 +64,13 @@ def index():
     try:
         if bus.read_byte(bmp_device): #check to see if the BMP sensor is attached decimal 119 hex 0x77 address
 
-            global temp = bmp_sensor.read_temperature() #read the temperature from the BMP sensor in celcius
+            temp = bmp_sensor.read_temperature() #read the temperature from the BMP sensor in celcius
             pressure = bmp_sensor.read_pressure() #read the pressure from the BMP sensor
             altitude = bmp_sensor.read_altitude() #read teh altitude value from the BMP sensor in meters
             altitude = '{:.2f}'.format(altitude) #convert the altitude value to two decimal places
 
     except: #if the device is not connected send null values
-        global temp = 0
+        temp = 0
         pressure = 0
         altitude = 0
         pass
