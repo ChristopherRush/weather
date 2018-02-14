@@ -48,7 +48,7 @@ app = Flask(__name__)
 @app.route('/') # this tells the program what url triggers the function when a request is made
 def index():
     try:
-        if humidity, temperature = Adafruit_DHT.read_retry(dh22_sensor, pin): #get the values from the sensor
+        if (humidity, temperature = Adafruit_DHT.read_retry(dh22_sensor, pin)): #get the values from the sensor
             humidity ='{:.2f}'.format(humidity) #convert value to two decimal places
             temperature ='{:.1f}'.format(temperature) #convert value to one decimal place
     except:
