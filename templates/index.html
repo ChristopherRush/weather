@@ -23,30 +23,7 @@
               id: "gauge",
               value: {{temp}},
               symbol: '\u2103',
-              customSectors: {
-                ranges: [{
-                  color : "#1B94FF",
-                  lo : 0,
-                  hi : 10
-                },{
-                  color : "#FDDC00",
-                  lo : 11,
-                  hi : 20
-                },{
-                  color : "#FF9E00",
-                  lo : 21,
-                  hi : 30
-                },{
-                  color : "#FF7100",
-                  lo : 31,
-                  hi : 40
-                },{
-                  color : "#FF3F00",
-                  lo : 41,
-                  hi : 50
-                }]
-              },
-              levelColorsGradient: false,
+              levelColors: ['#1B94FF', '#FDDC00', '#FF9E00', '#FF3F00'],
               min: 0,
               decimals: 1,
               max: 50,
