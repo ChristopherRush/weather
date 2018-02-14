@@ -46,14 +46,15 @@
         </div>
 
   </div>
-  <div id="gauge" style="width:100px; height:80px">
+  <div id="gauge" style="width:200px; height:200px">
     <script>
     var g = new JustGage({
       id: "gauge",
       value: {{temperature}},
       min: 0,
+      decimals: 2,
       max: 50,
-      title: "Visitors"
+      title: "Temperature"
     });
   </script>
   </div>
