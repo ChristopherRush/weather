@@ -1,5 +1,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="refresh" content="5">
+<script src="raphael.2.1.0.min.js"></script>
+<script src="justgage.1.0.1.min.js"></script>
 <html>
 <head>
 
@@ -42,6 +44,17 @@
                 <h2>{{ humidity }} %</h2>
         </div>
 
+  </div>
+  <div id="gauge" class="200x160px">
+    <script>
+    var g = new JustGage({
+      id: "gauge",
+      value: {{temperature}},
+      min: 0,
+      max: 100,
+      title: "Visitors"
+    });
+  </script>
   </div>
   </body>
   </html>

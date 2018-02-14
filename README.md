@@ -96,7 +96,7 @@ ifconfig eth0
 
 ## Changing web page refresh rate
 
-By default this project has the ability to refresh the web page every 5 seconds to get the latest update value from the sensors. You can change the refresh rate in the index.html page by changing the following:
+By default this project has the ability to refresh the web page every 5 seconds to get the latest update value from the sensors. You can change the refresh rate in the index.html page by changing the content value in the following line:
 
 ```html
 <meta http-equiv="refresh" content="5">
