@@ -47,14 +47,15 @@ Flask had a specific file structure that needs to be met in order for all the fi
 - requirements.txt
   - static/
     - css/
+      - style.css
   - templates
     - index.html
 
-For further information visit (http://exploreflask.com/en/latest/organizing.html)
+For further information visit http://exploreflask.com/en/latest/organizing.html
 
 
 
-### Weather Station install
+### Weather Station Project install
 
 To download the weather station project files to your Raspberry Pi type the following in the terminal window:
 
@@ -69,5 +70,10 @@ To run the Flask web server:
 cd weather
 sudo python weather.py
 ```
+
+To view the webpage you will need to go to the Raspberry Pi's IP address on your local network such as http://192.168.0.23 yours may differ. You can find your IP address from the terminal window on the Raspberry Pi by typing in the following command:
+
+```
+
 
 ## Troubleshooting
