@@ -24,7 +24,7 @@ Just run the following line in the terminal to automatically install all the lib
 curl -sSL https://raw.githubusercontent.com/ChristopherRush/weather/master/install.sh | sudo bash
 ```
 
-### Adafruit BMP180
+### Adafruit BMP180 Library
 
 ```bash
 git clone https://github.com/adafruit/Adafruit_Python_BMP.git
@@ -32,7 +32,7 @@ cd Adafruit_Python_BMP
 sudo python setup.py install
 ```
 
-### Adafruit DHT22
+### Adafruit DHT22 Library
 
 ```bash
 git clone https://github.com/adafruit/Adafruit_Python_DHT.git
