@@ -4,12 +4,12 @@ git clone https://github.com/adafruit/Adafruit_Python_BMP.git
 cd Adafruit_Python_BMP
 python setup.py install
 
-cd..
+cd ..
 
 git clone https://github.com/adafruit/Adafruit_Python_DHT.git
-cd Adafruit_Python_BMP
+cd Adafruit_Python_DHT
 python setup.py install
 
-cd..
+cd ..
 
 git clone https://github.com/ChristopherRush/weather.git
