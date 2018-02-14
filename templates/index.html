@@ -36,10 +36,10 @@
 <div id="dht22">
          <h1> DHT22 Sensor Readings</h1>
         <div class="block">
-                <div id="gauge" style="width:300px; height:300px">
+                <div class="gauge" style="width:300px; height:300px">
                   <script>
                   var g = new JustGage({
-                    id: "gauge",
+                    id: "temp",
                     value: {{temperature}},
                     min: 0,
                     decimals: 1,
@@ -51,10 +51,10 @@
         </div>
 
         <div class="block">
-          <div id="gauge" style="width:300px; height:300px">
+          <div class="gauge" style="width:300px; height:300px">
             <script>
             var g = new JustGage({
-              id: "gauge",
+              id: "humid",
               value: {{humidity}},
               symbol: "%"
               min: 0,
