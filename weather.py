@@ -49,14 +49,14 @@ app = Flask(__name__)
 def index():
     try:
         humidity, temperature = Adafruit_DHT.read(dh22_sensor, pin) #get the values from the sensor
+        humidity ='{:.2f}'.format(humidity) #convert value to two decimal places
+        temperature ='{:.1f}'.format(temperature) #convert value to one decimal place
 
     except:
         humidity = 000
         temperature = 00
         pass
 
-    humidity ='{:.2f}'.format(humidity) #convert value to two decimal places
-    temperature ='{:.1f}'.format(temperature) #convert value to one decimal place
 
 
     try:
