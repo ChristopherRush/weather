@@ -26,6 +26,7 @@ from flask import Flask, render_template
 try: #check to see if the device is connected
     if bus.read_byte(bmp_device): #if i2c device is connected create device object
         bmp_sensor = BMP085.BMP085()
+        print "first"
 except: #do nothing if sensor is not connected
     pass
 
@@ -71,7 +72,7 @@ def index():
         temp = 0
         pressure = 0
         altitude = 0
-        
+        pass
 
 
     #variables to pass through to the web page
