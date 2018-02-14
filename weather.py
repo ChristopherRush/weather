@@ -71,7 +71,7 @@ def index():
         temp = 0
         pressure = 0
         altitude = 0
-        pass
+        
 
 
     #variables to pass through to the web page

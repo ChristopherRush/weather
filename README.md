@@ -59,6 +59,7 @@ Flask had a specific file structure that needs to be met in order for all the fi
   - static/
     - css/
       - style.css
+    - javascript/
   - templates
     - index.html
 
