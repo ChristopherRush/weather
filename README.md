@@ -26,7 +26,7 @@ curl -sSL https://raw.githubusercontent.com/ChristopherRush/weather/master/insta
 
 ### Adafruit BMP180
 
-```
+```bash
 git clone https://github.com/adafruit/Adafruit_Python_BMP.git
 cd Adafruit_Python_BMP
 sudo python setup.py install
@@ -34,7 +34,7 @@ sudo python setup.py install
 
 ### Adafruit DHT22
 
-```
+```bash
 git clone https://github.com/adafruit/Adafruit_Python_DHT.git
 cd Adafruit_Python_BMP
 sudo python setup.py install
@@ -45,7 +45,7 @@ sudo python setup.py install
 Flask is a lightweight web framework that runs using Python programming language. We will be using Flask to create a web server that can host a web page locally on the Raspberry Pi and then can be accessible over the network from any other device on that same network.
 
 By default Flask is already installed on the latest version of Raspbian OS, however if the package is not there then you can type the following in the terminal window to install Flask:
-```
+```bash
 sudo apt-get install python3-flask
 ```
 
@@ -68,21 +68,21 @@ For further information visit http://exploreflask.com/en/latest/organizing.html
 
 To download the weather station project files to your Raspberry Pi type the following in the terminal window:
 
-```
+```bash
 git clone https://github.com/ChristopherRush/weather.git
 
 ```
 
 To run the Flask web server:
 
-```
+```bash
 cd weather
 sudo python weather.py
 ```
 
 To view the webpage you will need to go to the Raspberry Pi's IP address on your local network such as http://192.168.0.23 yours may differ. You can find your IP address from the terminal window on the Raspberry Pi by typing in the following command:
 
-```
+```bash
 #Wi-Fi connection
 ifconfig wlan0
 
