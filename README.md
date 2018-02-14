@@ -112,6 +112,22 @@ The JavaScript files have already been added to the project files in static/java
 <script src="{{url_for('static', filename='javascript/justgage.js')}}"></script>
 <script src="{{url_for('static', filename='javascript/raphael-2.1.4.min.js')}}"></script>
 ```
+To add a new guage you will need to create a new div with id and class.
+
+```html
+<div id="gauge" class="gauge">
+```
+
+Add teh following to the css file to style each gauage element. The id element will change the individual gauge block and as such will require a unique id where as the class will style all guage element the same. Note: currently the id is not used in the css.
+
+```css
+.gauge {
+     width: 300px;
+     height: 300px;
+     display: inline-block;
+     margin: 5px;
+ }
+ ```
 
 JustGuage plugin is licensed under the MIT license
 
