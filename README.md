@@ -9,6 +9,15 @@ This project uses the Adafruit BMP180 pressure sensor and also the DHT22 tempera
 
 ## Hardware setup
 
+For this weather station project you will require the following parts:
+
+- Raspberry Pi
+- Wi-Fi or Ethernet network ability
+- 8GB microSD card with Raspbian OS
+- DHT22 Temperature & Humidity sensors
+  - 4.7k resistor
+- Adafruit BMP180 Pressure sensor (discontinued)
+
 All sensors can be Plug 'n' Play as the program is running (Not recommended).
 
 ![weather station](https://www.pi-supply.com/wp-content/uploads/2018/02/fritz_bb.png)
@@ -105,20 +114,21 @@ By default this project has the ability to refresh the web page every 5 seconds 
 ```
 ## JustGauge Javascript Plugin
 
-JustGage is a handy JavaScript plugin for generating and animating nice & clean gauges. It is based on Raphaël library for vector drawing, so it’s completely resolution independent and self-adjusting. This plugin is a nice clean way to display the values from our weather station in its simplest form.
+[Justgauge](http://justgage.com/) is a handy JavaScript plugin for generating and animating nice & clean gauges. It is based on Raphaël library for vector drawing, so it’s completely resolution independent and self-adjusting. This plugin is a nice clean way to display the values from our weather station in its simplest form.
 
-The JavaScript files have already been added to the project files in static/javascript/ . To add JavaScript to the index.html file you must do so in the following format:
+The JavaScript files have already been added to the project files in static/javascript/ . To add JavaScript to the index.html file you must do so in the following format not the regular html format:
+
 ```html
 <script src="{{url_for('static', filename='javascript/justgage.js')}}"></script>
 <script src="{{url_for('static', filename='javascript/raphael-2.1.4.min.js')}}"></script>
 ```
-To add a new guage you will need to create a new div with id and class.
+To add a new gauge you will need to create a new div with id and class.
 
 ```html
 <div id="gauge" class="gauge">
 ```
 
-Add the following to the css file to style each gauge element. The id element will change the individual gauge block and as such will require a unique id where as the class will style all gauge element the same. Note: currently the id is not used in the css.
+Add the following to the css file to style each gauge element. The id element will change the individual gauge block and as such will require a unique id where as the class will style all gauge elements the same. Note: currently the id is not used in this project.
 
 ```css
 .gauge {
@@ -140,7 +150,7 @@ var gauge = new JustGage({
   min: 0, #minimum range value
   decimals: 1, #decimal places
   max: 50, #maximum range value
-  title: "Temperature"
+  title: "Temperature" #text to be displayed above the gauge
 });
 </script>
 ```
