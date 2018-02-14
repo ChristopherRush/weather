@@ -47,14 +47,14 @@ app = Flask(__name__)
 
 @app.route('/') # this tells the program what url triggers the function when a request is made
 def index():
-    try:
+    try: #check to see if the DHT sensor is connected
         humidity, temperature = Adafruit_DHT.read(dh22_sensor, pin) #get the values from the sensor
         humidity ='{:.2f}'.format(humidity) #convert value to two decimal places
         temperature ='{:.1f}'.format(temperature) #convert value to one decimal place
 
-    except:
-        humidity = 000
-        temperature = 00
+    except: # If the sensor is not connected send null values
+        humidity = 0
+        temperature = 0
         pass
 
 
