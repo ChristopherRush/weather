@@ -128,6 +128,23 @@ Add the following to the css file to style each gauge element. The id element wi
      margin: 5px;
  }
  ```
+Finally add these parameters changing the value to the variable that gets passed through from the Python script.
+
+```html
+<script>
+var gauge = new JustGage({
+  id: "gauge",
+  value: {{temp}},
+  symbol: '\u2103', #can be added as plain text or hex code
+  levelColors: ['#1B94FF', '#FDDC00', '#FF9E00', '#FF3F00'],
+  min: 0, #minimum range value
+  decimals: 1, #decimal places
+  max: 50, #maximum range value
+  title: "Temperature"
+});
+</script>
+```
+
 
 JustGuage plugin is licensed under the MIT license
 
