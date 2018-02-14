@@ -51,8 +51,8 @@ def index():
         humidity, temperature = Adafruit_DHT.read_retry(dh22_sensor, pin) #get the values from the sensor
 
     except:
-        humidity = 0
-        temperature = 0
+        humidity = 000
+        temperature = 00
         pass
 
     humidity ='{:.2f}'.format(humidity) #convert value to two decimal places
