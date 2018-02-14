@@ -5,7 +5,7 @@
 
 ![weather station gui](https://www.pi-supply.com/wp-content/uploads/2018/02/Screen-Shot-2018-02-14-at-17.10.44.png)
 
-This project uses the Adafruit BMP180 pressure sensor and also the DHT22 temperature/humidity sensor to create a basic weather station using the Raspberry Pi. The front end of the weather station uses a web server provided by Flask and programmed in Python. The interface is done using a javascript plugin called [JustGauge](http://justgage.com), which is fully customisable. 
+This project uses the Adafruit BMP180 pressure sensor and also the DHT22 temperature/humidity sensor to create a basic weather station using the Raspberry Pi. The front end of the weather station uses a web server provided by Flask and programmed in Python. The interface is done using a javascript plugin called [JustGauge](http://justgage.com), which is fully customisable.
 
 ## Hardware setup
 
@@ -103,6 +103,17 @@ By default this project has the ability to refresh the web page every 5 seconds 
 ```html
 <meta http-equiv="refresh" content="5">
 ```
+## JustGauge Javascript Plugin
+
+JustGage is a handy JavaScript plugin for generating and animating nice & clean gauges. It is based on Raphaël library for vector drawing, so it’s completely resolution independent and self-adjusting. This plugin is a nice clean way to display the values from our weather station in its simplest form.
+
+The JavaScript files have already been added to the project files in static/javascript/ . To add JavaScript to the index.html file you must do so in the following format:
+```html
+<script src="{{url_for('static', filename='javascript/justgage.js')}}"></script>
+<script src="{{url_for('static', filename='javascript/raphael-2.1.4.min.js')}}"></script>
+```
+
+JustGuage plugin is licensed under the MIT license
 
 ## PiJuice Power Saving
 
