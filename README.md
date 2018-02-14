@@ -15,6 +15,15 @@ This project uses the Adafruit BMP180 pressure sensor and also the DHT22 tempera
 
 This project runs on the latest version of Raspbian OS for the Raspberry Pi. Make sure you run `sudo apt-get update` before installing the following libraries. You will need to run the following commands in the terminal window to install the libraries for the weather sensors.
 
+### Auto Installation
+
+Just run the following line in the terminal to automatically install all the libraries and project files to the Raspberyr Pi.
+
+```
+# Run this line and the weather station will be setup and installed
+curl -sSL https://raw.githubusercontent.com/ChristopherRush/weather/master/install.sh | sudo bash
+```
+
 ### Adafruit BMP180
 
 ```
