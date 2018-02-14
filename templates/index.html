@@ -17,19 +17,51 @@
   <div id="wrapper">
         <h1>Adafruit BMP180 Sensor</h1>
         <div class="block">
-                <h1>Temperature:</h1>
-                <h2>{{ temp }} &#8451</h2>
+          <div id="gauge" class="gauge">
+            <script>
+            var gauge = new JustGage({
+              id: "gauge",
+              value: {{temp}},
+              symbol: "&#8451",
+              min: 0,
+              decimals: 1,
+              max: 50,
+              title: "Temperature"
+            });
+          </script>
+          </div>
         </div>
 
 
         <div class="block">
-                <h1>Pressure:</h1>
-                <h2>{{ pressure }} hPa</h2>
+          <div id="gauge" class="gauge">
+            <script>
+            var gauge = new JustGage({
+              id: "gauge",
+              value: {{pressure}},
+              symbol: "hPa",
+              min: 0,
+              max: 10000,
+              title: "Pressure"
+            });
+          </script>
+          </div>
         </div>
 
         <div class="block">
-                <h1>Altitude:</h1>
-                <h2>{{ altitude }} m</h2>
+          <div id="gauge" class="gauge">
+            <script>
+            var gauge = new JustGage({
+              id: "gauge",
+              value: {{altitude}},
+              symbol: "m",
+              min: 0,
+              decimals: 1,
+              max: 1000,
+              title: "Altitude"
+            });
+          </script>
+          </div>
         </div>
 </div>
 
@@ -41,6 +73,7 @@
                   var gauge = new JustGage({
                     id: "gauge",
                     value: {{temperature}},
+                    symbol: "&#8451",
                     min: 0,
                     decimals: 1,
                     max: 50,
