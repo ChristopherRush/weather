@@ -37,7 +37,18 @@
          <h1> DHT22 Sensor Readings</h1>
         <div class="block">
                 <h1>Temperature:</h1>
-                <h2>{{ temperature }} &#8451</h2>
+                <div id="gauge" style="width:200px; height:200px">
+                  <script>
+                  var g = new JustGage({
+                    id: "gauge",
+                    value: {{temperature}},
+                    min: 0,
+                    decimals: 2,
+                    max: 50,
+                    title: "Temperature"
+                  });
+                </script>
+                </div>
         </div>
 
         <div class="block">
@@ -46,17 +57,6 @@
         </div>
 
   </div>
-  <div id="gauge" style="width:200px; height:200px">
-    <script>
-    var g = new JustGage({
-      id: "gauge",
-      value: {{temperature}},
-      min: 0,
-      decimals: 2,
-      max: 50,
-      title: "Temperature"
-    });
-  </script>
-  </div>
+
   </body>
   </html>
