@@ -47,7 +47,6 @@ app = Flask(__name__)
 
 @app.route('/') # this tells the program what url triggers the function when a request is made
 def index():
-    global temp
     try: #check to see if the DHT sensor is connected
         humidity, temperature = Adafruit_DHT.read(dh22_sensor, pin) #get the values from the sensor
         humidity ='{:.2f}'.format(humidity) #convert value to two decimal places
@@ -62,6 +61,7 @@ def index():
 
     try:
         if bus.read_byte(bmp_device): #check to see if the BMP sensor is attached decimal 119 hex 0x77 address
+            print "first"
             temp = bmp_sensor.read_temperature() #read the temperature from the BMP sensor in celcius
             pressure = bmp_sensor.read_pressure() #read the pressure from the BMP sensor
             altitude = bmp_sensor.read_altitude() #read teh altitude value from the BMP sensor in meters
