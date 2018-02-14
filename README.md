@@ -15,7 +15,7 @@ All sensors can be Plug 'n' Play as the program is running (Not recommended).
 
 ## Software Installation
 
-This project runs on the latest version of Raspbian OS for the Raspberry Pi. Make sure you run `sudo apt-get update` before installing the following libraries. You will need to run the following commands in the terminal window to install the libraries for the weather sensors.
+This project runs on the latest version of [Raspbian OS](https://www.raspberrypi.org/downloads/) for the Raspberry Pi. Make sure you run `sudo apt-get update` before installing the following libraries. You will need to run the following commands in the terminal window to install the libraries for the weather sensors.
 
 ### Auto Installation
 
@@ -44,9 +44,9 @@ sudo python setup.py install
 
 ### Flask
 
-Flask is a lightweight web framework that runs using Python programming language. We will be using Flask to create a web server that can host a web page locally on the Raspberry Pi and then can be accessible over the network from any other device on that same network.
+[Flask](http://flask.pocoo.org) is a lightweight web framework that runs using Python programming language. We will be using Flask to create a web server that can host a web page locally on the Raspberry Pi and then can be accessible over the network from any other device on that same network.
 
-By default Flask is already installed on the latest version of Raspbian OS, however if the package is not there then you can type the following in the terminal window to install Flask:
+By default Flask is already installed on the latest version of [Raspbian OS](https://www.raspberrypi.org/downloads/), however if the package is not there then you can type the following in the terminal window to install Flask:
 ```bash
 sudo apt-get install python3-flask
 ```
@@ -93,6 +93,15 @@ ifconfig eth0
 ```
 
 ![ipaddress](https://www.pi-supply.com/wp-content/uploads/2018/02/Screen-Shot-2018-02-14-at-11.11.06.png)
+
+## Changing web page refresh rate
+
+By default this project has the ability to refresh the web page every 5 seconds to get the latest update value from the sensors. You can change the refresh rate in the index.html page by changing the following:
+
+```html
+<meta http-equiv="refresh" content="5">
+```
+
 
 
 ## Troubleshooting
