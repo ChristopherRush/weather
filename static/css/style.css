@@ -5,8 +5,8 @@ margin-top: 50px;
 }
 
 .block {
-width: 100%;
-
+width: 25%;
+float: left;
 }
 
 #dht22 {
@@ -17,8 +17,9 @@ margin-top: 50px;
 }
 
 .gauge {
-     width: 33%;
-     height: 300px
-     float: left;
+     width: 300px;
+     height: 300px;
+     display: inline-block;
+     border: 1px solid #ccc;
      margin: 5px;
  }

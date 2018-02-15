@@ -1,7 +1,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- <meta http-equiv="refresh" content="5"> -->
 
-
 <script src="{{url_for('static', filename='javascript/justgage.js')}}"></script>
 <script src="{{url_for('static', filename='javascript/raphael-2.1.4.min.js')}}"></script>
 <html>
@@ -32,10 +31,10 @@
             });
           </script>
           </div>
+        </div>
 
 
-
-
+        <div class="block">
           <div id="gauge2" class="gauge">
             <script>
             var gauge2 = new JustGage({
@@ -48,9 +47,9 @@
             });
           </script>
           </div>
+        </div>
 
-
-
+        <div class="block">
           <div id="gauge3" class="gauge">
             <script>
             var gauge3 = new JustGage({
@@ -62,10 +61,10 @@
               max: 1000,
               title: "Altitude"
             });
-            </script>
+          </script>
           </div>
-
         </div>
+</div>
 
 <div id="dht22">
          <h1> DHT22 Sensor Readings</h1>
