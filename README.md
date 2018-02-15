@@ -11,10 +11,10 @@ This project uses the Adafruit BMP180 pressure sensor and also the DHT22 tempera
 
 For this weather station project you will require the following parts:
 
-- Raspberry Pi
+- Raspberry Pi computer
 - Wi-Fi or Ethernet network ability
 - 8GB microSD card with Raspbian OS
-- DHT22 Temperature & Humidity sensors
+- DHT22 Temperature & Humidity sensor
   - 4.7k resistor
 - Adafruit BMP180 Pressure sensor (discontinued)
 
