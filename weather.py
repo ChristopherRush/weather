@@ -25,7 +25,7 @@ from flask import Flask, render_template
 
 try: #check to see if the device is connected
 
-    bus.read_byte(bmp_device): #if i2c device is connected create device object '''
+    bus.read_byte(bmp_device) #if i2c device is connected create device object '''
     bmp_sensor = BMP085.BMP085()
     print "here"
 except: #do nothing if sensor is not connected
