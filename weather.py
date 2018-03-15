@@ -121,7 +121,7 @@ def index():
                 gas_score = 100 - (hum_weighting * 100)
 
             # Calculate air_quality_score.
-            air_quality_score = '{:.2f}'.format hum_score + gas_score
+            air_quality_score = '{:.2f}'.format(hum_score + gas_score)
     except:
             hum_score = 0
             gas_score = 0
