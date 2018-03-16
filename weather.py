@@ -18,9 +18,9 @@ import Adafruit_BMP.BMP085 as BMP085 #Works for both the BMP085 and BMP180 senso
 import Adafruit_DHT # this library works for DHT11 DHT22 and AM2302 sensors
 import bme680 # import bme680 library
 import time
-import subprocess
+import os
 
-subprocess.call("HOSTNAME -I", shell=True)
+os.open("HOSTNAME -I")
 
 
 sensor = bme680.BME680() #create bme680 object
