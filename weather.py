@@ -45,7 +45,7 @@ bmp_device = 119 #i2c address in decimal
 
 from flask import Flask, render_template
 
-try:
+
     # Collect gas resistance burn-in values, then use the average
     # of the last 50 values to set the upper limit for calculating
     # gas_baseline.
@@ -69,8 +69,7 @@ try:
         hum_weighting = 0.25
 
         print("Gas baseline: {0} Ohms, humidity baseline: {1:.2f} %RH\n".format(gas_baseline, hum_baseline))
-except:
-    pass
+
 
 run = 1
 
