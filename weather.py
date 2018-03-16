@@ -33,7 +33,7 @@ sensor.select_gas_heater_profile(0)
 
 start_time = time.time()
 curr_time = time.time()
-burn_in_time = 300
+burn_in_time = 60
 
 run = 0
 
@@ -134,7 +134,7 @@ def index():
             air_quality_score = 0
             temp_score = 0
             press_score = 0
-
+            pass
 
 
     try: #check to see if the DHT sensor is connected

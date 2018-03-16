@@ -5,8 +5,9 @@ margin-top: 50px;
 }
 
 .block {
-width: 33%;
+width: 25%;
 float: left;
+align-content: center;
 }
 
 #dht22 {
