@@ -45,7 +45,7 @@ bmp_device = 119 #i2c address in decimal
 
 from flask import Flask, render_template
 
-
+print run 
     # Collect gas resistance burn-in values, then use the average
     # of the last 50 values to set the upper limit for calculating
     # gas_baseline.
@@ -72,6 +72,7 @@ if run == 0:
 
 
 run = 1
+print run
 
 try: #check to see if the device is connected
 
