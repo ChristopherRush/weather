@@ -1,11 +1,10 @@
 #wrapper {
 width: 100%;
-float: left;
+
 margin-top: 50px;
 }
 
 .block {
-width: 25%;
 float: left;
 align-content: center;
 }
@@ -23,5 +22,4 @@ margin-top: 50px;
      display: inline-block;
      border: 1px solid #ccc;
      margin: 5px;
-     float: left;
  }
