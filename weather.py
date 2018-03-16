@@ -20,7 +20,7 @@ import bme680 # import bme680 library
 import time
 import subprocess
 
-subprocess.call(["hostname", "-I"])
+subprocess.call(["echo web address" "hostname", "-I"])
 
 
 
