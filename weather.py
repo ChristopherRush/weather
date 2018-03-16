@@ -102,7 +102,7 @@ app = Flask(__name__)
 @app.route('/') # this tells the program what url triggers the function when a request is made
 def index():
     try:
-        if sensor.get_sensor_data() and sensor.data.heat_stable:
+        if sensor.get_sensor_data():
             gas = sensor.data.gas_resistance
             gas_offset = gas_baseline - gas
 
