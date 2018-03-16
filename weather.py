@@ -92,9 +92,9 @@ pin = 4 #DHT22 data pin on the raspberry pi
 #temp = sensor.read_temperature()
 #pressure = sensor.read_pressure()
 #altitude = sensor.read_altitude()
-
-
-
+while True:
+    sensor.get_sensor_data()
+    print "data"
 
 
 app = Flask(__name__)
@@ -102,7 +102,7 @@ app = Flask(__name__)
 @app.route('/') # this tells the program what url triggers the function when a request is made
 def index():
     try:
-        if sensor.get_sensor_data():
+
             gas = sensor.data.gas_resistance
             gas_offset = gas_baseline - gas
 
