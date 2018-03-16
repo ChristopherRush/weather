@@ -31,13 +31,6 @@ sensor.set_gas_heater_temperature(320)
 sensor.set_gas_heater_duration(150)
 sensor.select_gas_heater_profile(0)
 
-start_time = time.time()
-curr_time = time.time()
-burn_in_time = 60
-
-run = 0
-
-burn_in_data = []
 
 bus = smbus.SMBus(1)
 
@@ -73,7 +66,7 @@ def index():
         if sensor.get_sensor_data():
             temp_score = sensor.data.temperature
             press_score = sensor.data.pressure
-            hum_score = sensor.data.humidity
+            hum_score = '{:.1f}'.format(sensor.data.humidity)
             air_quality_score = 100
 
     except:
