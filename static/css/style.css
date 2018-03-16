@@ -23,4 +23,5 @@ margin-top: 50px;
      display: inline-block;
      border: 1px solid #ccc;
      margin: 5px;
+     float: left;
  }
