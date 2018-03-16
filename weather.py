@@ -48,7 +48,7 @@ except: #do nothing if sensor is not connected
 
 
 dh22_sensor = Adafruit_DHT.DHT22
-
+sensor.get_sensor_data()
 
 pin = 4 #DHT22 data pin on the raspberry pi
 
@@ -63,18 +63,18 @@ app = Flask(__name__)
 @app.route('/') # this tells the program what url triggers the function when a request is made
 def index():
     try:
-        if sensor.get_sensor_data():
-            temp_score = sensor.data.temperature
-            press_score = sensor.data.pressure
-            hum_score = '{:.1f}'.format(sensor.data.humidity)
-            air_quality_score = 100
+        sensor.get_sensor_data():
+        temp_score = sensor.data.temperature
+        press_score = sensor.data.pressure
+        hum_score = '{:.1f}'.format(sensor.data.humidity)
+        air_quality_score = 100
 
     except:
-            hum_score = 0
-            air_quality_score = 0
-            temp_score = 0
-            press_score = 0
-            pass
+        hum_score = 0
+        air_quality_score = 0
+        temp_score = 0
+        press_score = 0
+        pass
 
 
     try: #check to see if the DHT sensor is connected
