@@ -125,10 +125,15 @@ def index():
 
             # Calculate air_quality_score.
             air_quality_score = '{:.2f}'.format(hum_score + gas_score)
+
+            temp_score = '{:.1f}'.format(sensor.data.temperature)
+            press_score = '{:.3f}'.format(sensor.data.pressure)
     except:
             hum_score = 0
             gas_score = 0
             air_quality_score = 0
+            temp_score = 0
+            press_score = 0
 
 
 
@@ -167,8 +172,10 @@ def index():
             'humidity' : humidity,
             'temperature' : temperature,
             'hum_score' : hum_score,
-            'gas_score' : gas_score,
-            'air_quality_score' : air_quality_score
+            'temp_score' : temp_score,
+            'air_quality_score' : air_quality_score,
+            'press_score' : press_score
+
     }
     return render_template('index.html', **templateData) #when a html request has been made return these values
 

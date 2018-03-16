@@ -22,8 +22,8 @@
         var gauge = new JustGage({
           id: "gauge6",
           value: {{hum_score}},
-          symbol: '\u2103',
-          levelColors: ['#1B94FF', '#FDDC00', '#FF9E00', '#FF3F00'],
+          symbol: "%",
+          levelColors: ['#EC7063', '#F4D03F', '#58D68D'],
           min: 0,
           decimals: 1,
           max: 100,
@@ -41,6 +41,7 @@
           id: "gauge7",
           value: {{air_quality_score}},
           symbol: "%",
+          levelColors: ['#EC7063', '#F4D03F', '#58D68D'],
           min: 0,
           max: 100,
           title: "Air Quality"
@@ -54,12 +55,28 @@
         <script>
         var gauge8 = new JustGage({
           id: "gauge8",
-          value: {{altitude}},
-          symbol: "m",
+          value: {{temp_score}},
+          symbol: '\u2103',
+          levelColors: ['#5DADE2', '#58D68D', '#F4D03F', '#EC7063'],
           min: 0,
           decimals: 1,
-          max: 1000,
-          title: "Altitude"
+          max: 50,
+          title: "Temperature"
+        });
+      </script>
+      </div>
+    </div>
+    <div class="block">
+      <div id="gauge9" class="gauge">
+        <script>
+        var gauge9 = new JustGage({
+          id: "gauge9",
+          value: {{press_score}},
+          symbol: "hPa",
+          levelColors: ['#EC7063', '#F4D03F', '#58D68D'],
+          min: 0,
+          max: 100000,
+          title: "Pressure"
         });
       </script>
       </div>
