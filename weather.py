@@ -49,7 +49,7 @@ try:
     # Collect gas resistance burn-in values, then use the average
     # of the last 50 values to set the upper limit for calculating
     # gas_baseline.
-    if run = 0:
+    if run == 0:
         print("Collecting gas resistance burn-in data for 5 mins\n")
         while curr_time - start_time < burn_in_time:
             curr_time = time.time()
