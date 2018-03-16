@@ -19,7 +19,7 @@ import Adafruit_DHT # this library works for DHT11 DHT22 and AM2302 sensors
 import bme680 # import bme680 library
 import time
 
-bme680_sensor = bme680.BME680() #create bme680 object
+sensor = bme680.BME680() #create bme680 object
 
 sensor.set_humidity_oversample(bme680.OS_2X)
 sensor.set_pressure_oversample(bme680.OS_4X)
