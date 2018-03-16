@@ -7,6 +7,7 @@ margin-top: 50px;
 .block {
 float: left;
 align-content: center;
+display: inline-block;
 }
 
 #dht22 {
