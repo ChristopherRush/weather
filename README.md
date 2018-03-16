@@ -52,6 +52,12 @@ cd Adafruit_Python_DHT
 sudo python setup.py install
 ```
 
+### PiJuice GUI
+
+```bash
+sudo apt-get install pijuice-gui
+```
+
 ### Flask
 
 [Flask](http://flask.pocoo.org) is a lightweight web framework that runs using Python programming language. We will be using Flask to create a web server that can host a web page locally on the Raspberry Pi and then can be accessible over the network from any other device on that same network.
@@ -159,7 +165,9 @@ var gauge = new JustGage({
 JustGuage plugin is licensed under the MIT license
 
 ## PiJuice
+This project using PiJuice as a portable power supply with the additional of a solar cell panel to restore the battery during the daytime or when the sun is available. There is some configuration of the PiJuice which needs to be done in the gui before running the flask web server. The Raspberry Pi needs to be able to shutdown successfully when the battery levels are below 5% and then when the battery has reached a 95% charge it then proceed to boot up again.
 
+For further information on the PiJuice project please visit the [GitHub](https://github.com/PiSupply/PiJuice) page. 
 
 
 

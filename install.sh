@@ -11,5 +11,8 @@ cd Adafruit_Python_DHT
 python setup.py install
 
 cd ..
+sudo apt-get install pijuice-gui -y
+
+cd ..
 
 git clone https://github.com/ChristopherRush/weather.git
