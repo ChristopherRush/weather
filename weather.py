@@ -22,7 +22,7 @@ import subprocess
 
 subprocess.call(["echo", "Webserver address:", "$(hostname -I)", ":5000"])
 
- echo Webserver address: $(hostname -I):5000
+ #echo Webserver address: $(hostname -I):5000
 
 
 
