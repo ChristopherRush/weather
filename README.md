@@ -178,5 +178,9 @@ There is also a light version, which does not require the gui but rather using t
 sudo apt-get install pijuice-base
 ```
 
+### PiJuice GUI Configuration
+
+### PiJuice Core Configuration
+
 
 ## Troubleshooting

@@ -18,6 +18,10 @@ import Adafruit_BMP.BMP085 as BMP085 #Works for both the BMP085 and BMP180 senso
 import Adafruit_DHT # this library works for DHT11 DHT22 and AM2302 sensors
 import bme680 # import bme680 library
 import time
+import netifaces as ni
+
+ni.ifaddresses('wlan0') # change to eth0 for ethernet address
+ip = ni.ifaddresses('wlan0')[ni.AF_INET][0]['addr'] #same here
 
 sensor = bme680.BME680() #create bme680 object
 
@@ -121,6 +125,6 @@ def index():
 
 if __name__ == '__main__':
         app.run(debug=True, host='0.0.0.0')
-        print"start app"
+        print ip
         #app.config['SERVER_NAME'] = 'myapp.local'
         #app.run(host=app.config['SERVER_NAME'], port=5000, debug=True)
