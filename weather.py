@@ -126,8 +126,8 @@ def index():
             # Calculate air_quality_score.
             air_quality_score = '{:.2f}'.format(hum_score + gas_score)
 
-            temp_score = '{:.1f}'.format(sensor.data.temperature)
-            press_score = '{:.3f}'.format(sensor.data.pressure)
+            temp_score = sensor.data.temperature
+            press_score = sensor.data.pressure
     except:
             hum_score = 0
             gas_score = 0
