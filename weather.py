@@ -19,10 +19,10 @@ import Adafruit_DHT # this library works for DHT11 DHT22 and AM2302 sensors
 import bme680 # import bme680 library
 import time
 import os
-import subprocess
+
 
 os.popen("hostname -I")
-subprocess.popen("hostname -I")
+
 
 sensor = bme680.BME680() #create bme680 object
 
