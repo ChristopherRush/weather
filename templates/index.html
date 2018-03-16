@@ -13,6 +13,67 @@
 
   <body>
 
+    <h1> Pi Supply Weather Station</h1>
+<div id="wrapper">
+    <h1>Pimoroni BME680 Sensor</h1>
+    <div class="block">
+      <div id="gauge6" class="gauge">
+        <script>
+        var gauge = new JustGage({
+          id: "gauge6",
+          value: {{hum_score}},
+          symbol: '\u2103',
+          levelColors: ['#1B94FF', '#FDDC00', '#FF9E00', '#FF3F00'],
+          min: 0,
+          decimals: 1,
+          max: 100,
+          title: "Humidity"
+        });
+      </script>
+      </div>
+    </div>
+
+
+    <div class="block">
+      <div id="gauge7" class="gauge">
+        <script>
+        var gauge2 = new JustGage({
+          id: "gauge7",
+          value: {{air_quality_score}},
+          symbol: "%",
+          min: 0,
+          max: 100,
+          title: "Air Quality"
+        });
+      </script>
+      </div>
+    </div>
+
+    <div class="block">
+      <div id="gauge8" class="gauge">
+        <script>
+        var gauge3 = new JustGage({
+          id: "gauge3",
+          value: {{altitude}},
+          symbol: "m",
+          min: 0,
+          decimals: 1,
+          max: 1000,
+          title: "Altitude"
+        });
+      </script>
+      </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+----------------------------------
+
         <h1> Pi Supply Weather Station</h1>
   <div id="wrapper">
         <h1>Adafruit BMP180 Sensor</h1>

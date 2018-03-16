@@ -33,7 +33,7 @@ sensor.select_gas_heater_profile(0)
 
 start_time = time.time()
 curr_time = time.time()
-burn_in_time = 300
+burn_in_time = 60
 
 burn_in_data = []
 
