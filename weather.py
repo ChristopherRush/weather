@@ -12,7 +12,7 @@
 #
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
+print "start"
 import smbus
 import Adafruit_BMP.BMP085 as BMP085 #Works for both the BMP085 and BMP180 sensors
 import Adafruit_DHT # this library works for DHT11 DHT22 and AM2302 sensors
@@ -45,7 +45,7 @@ bmp_device = 119 #i2c address in decimal
 
 from flask import Flask, render_template
 
-print run
+print "burn in"
     # Collect gas resistance burn-in values, then use the average
     # of the last 50 values to set the upper limit for calculating
     # gas_baseline.
@@ -101,6 +101,7 @@ app = Flask(__name__)
 def index():
     try:
             sensor.get_sensor_data()
+            print "read data"
             gas = sensor.data.gas_resistance
             gas_offset = gas_baseline - gas
 
@@ -179,5 +180,6 @@ def index():
 
 if __name__ == '__main__':
         app.run(debug=True, host='0.0.0.0')
+        print"start app"
         #app.config['SERVER_NAME'] = 'myapp.local'
         #app.run(host=app.config['SERVER_NAME'], port=5000, debug=True)
