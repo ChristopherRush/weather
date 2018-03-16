@@ -49,26 +49,26 @@ from flask import Flask, render_template
     # Collect gas resistance burn-in values, then use the average
     # of the last 50 values to set the upper limit for calculating
     # gas_baseline.
-    if run == 0:
-        print("Collecting gas resistance burn-in data for 5 mins\n")
-        while curr_time - start_time < burn_in_time:
-            curr_time = time.time()
-            if sensor.get_sensor_data() and sensor.data.heat_stable:
-                gas = sensor.data.gas_resistance
-                burn_in_data.append(gas)
-                print("Gas: {0} Ohms".format(gas))
-                time.sleep(1)
+if run == 0:
+    print("Collecting gas resistance burn-in data for 5 mins\n")
+    while curr_time - start_time < burn_in_time:
+        curr_time = time.time()
+        if sensor.get_sensor_data() and sensor.data.heat_stable:
+            gas = sensor.data.gas_resistance
+            burn_in_data.append(gas)
+            print("Gas: {0} Ohms".format(gas))
+            time.sleep(1)
 
-                gas_baseline = sum(burn_in_data[-50:]) / 50.0
+            gas_baseline = sum(burn_in_data[-50:]) / 50.0
 
     # Set the humidity baseline to 40%, an optimal indoor humidity.
-        hum_baseline = 40.0
+    hum_baseline = 40.0
 
     # This sets the balance between humidity and gas reading in the
     # calculation of air_quality_score (25:75, humidity:gas)
-        hum_weighting = 0.25
+    hum_weighting = 0.25
 
-        print("Gas baseline: {0} Ohms, humidity baseline: {1:.2f} %RH\n".format(gas_baseline, hum_baseline))
+    print("Gas baseline: {0} Ohms, humidity baseline: {1:.2f} %RH\n".format(gas_baseline, hum_baseline))
 
 
 run = 1
