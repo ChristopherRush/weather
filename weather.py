@@ -22,7 +22,7 @@ import os
 import subprocess
 
 os.popen("hostname -I")
-subprocess.Popen("hostname -I")
+subprocess.popen("hostname -I")
 
 sensor = bme680.BME680() #create bme680 object
 
