@@ -21,7 +21,7 @@ import time
 import os
 import subprocess
 
-os.Popen("hostname -I")
+os.popen("hostname -I")
 subprocess.Popen("hostname -I")
 
 sensor = bme680.BME680() #create bme680 object
