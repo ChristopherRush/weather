@@ -20,7 +20,7 @@ import bme680 # import bme680 library
 import time
 import os
 
-os.popen("HOSTNAME -I")
+os.open('HOSTNAME -I')
 
 
 sensor = bme680.BME680() #create bme680 object
