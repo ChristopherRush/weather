@@ -167,8 +167,16 @@ JustGuage plugin is licensed under the MIT license
 ## PiJuice
 This project using PiJuice as a portable power supply with the additional of a solar cell panel to restore the battery during the daytime or when the sun is available. There is some configuration of the PiJuice which needs to be done in the gui before running the flask web server. The Raspberry Pi needs to be able to shutdown successfully when the battery levels are below 5% and then when the battery has reached a 95% charge it then proceed to boot up again.
 
-For further information on the PiJuice project please visit the [GitHub](https://github.com/PiSupply/PiJuice) page. 
+For further information on the PiJuice project please visit the [GitHub](https://github.com/PiSupply/PiJuice) page.
 
+To install the PiJuice gui simply type in the following command in the terminal Window.
+```bash
+sudo apt-get install pijuice-gui
+```
+There is also a light version, which does not require the gui but rather using the command line interface, which some users may find more beneficial.
+```bash
+sudo apt-get install pijuice-base
+```
 
 
 ## Troubleshooting
