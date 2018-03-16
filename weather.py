@@ -63,7 +63,7 @@ app = Flask(__name__)
 @app.route('/') # this tells the program what url triggers the function when a request is made
 def index():
     try:
-        sensor.get_sensor_data():
+        sensor.get_sensor_data()
         temp_score = sensor.data.temperature
         press_score = sensor.data.pressure
         hum_score = '{:.1f}'.format(sensor.data.humidity)
