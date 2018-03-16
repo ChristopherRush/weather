@@ -18,7 +18,9 @@ import Adafruit_BMP.BMP085 as BMP085 #Works for both the BMP085 and BMP180 senso
 import Adafruit_DHT # this library works for DHT11 DHT22 and AM2302 sensors
 import bme680 # import bme680 library
 import time
-import socket
+import subprocess
+
+subprocess.call("HOSTNAME -I", shell=True)
 
 
 sensor = bme680.BME680() #create bme680 object
@@ -120,7 +122,7 @@ def index():
 
     }
     return render_template('index.html', **templateData) #when a html request has been made return these values
-print (socket.gethostbyname(socket.gethostname()))
+
 if __name__ == '__main__':
         app.run(debug=True, host='0.0.0.0')
 
