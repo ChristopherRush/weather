@@ -45,7 +45,7 @@ bmp_device = 119 #i2c address in decimal
 
 from flask import Flask, render_template
 
-print run 
+print run
     # Collect gas resistance burn-in values, then use the average
     # of the last 50 values to set the upper limit for calculating
     # gas_baseline.
@@ -102,7 +102,7 @@ app = Flask(__name__)
 @app.route('/') # this tells the program what url triggers the function when a request is made
 def index():
     try:
-
+        if sensor.get_sensor_data() and sensor.data.heat_stable:
             gas = sensor.data.gas_resistance
             gas_offset = gas_baseline - gas
 
