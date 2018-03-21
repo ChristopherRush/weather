@@ -64,7 +64,7 @@ def index():
 
         start_time = time.time()
         curr_time = time.time()
-        burn_in_time = 120
+        burn_in_time = 300
 
         burn_in_data = []
         while curr_time - start_time < burn_in_time:

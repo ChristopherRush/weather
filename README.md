@@ -182,5 +182,9 @@ sudo apt-get install pijuice-base
 
 ### PiJuice Core Configuration
 
+### Adjusting timings
+
+
+
 
 ## Troubleshooting
