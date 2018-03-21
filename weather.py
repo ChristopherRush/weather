@@ -40,7 +40,9 @@ sensor.select_gas_heater_profile(0)
 
 start_time = time.time()
 curr_time = time.time()
-burn_in_time = 300
+burn_in_time = 120
+
+
 
 burn_in_data = []
 
@@ -180,7 +182,12 @@ def index():
 
     }
     return render_template('index.html', **templateData) #when a html request has been made return these values
-
+    while curr_time - start_time < burn_in_time:
+        curr_time = time.time()
+        if sensor.get_sensor_data() and sensor.data.heat_stable:
+            gas = sensor.data.gas_resistance
+            print("Gas: {0} Ohms".format(gas))
+            time.sleep(1)
 if __name__ == '__main__':
         app.run(debug=False, host='0.0.0.0')
 
