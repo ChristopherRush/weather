@@ -34,11 +34,7 @@ sensor.set_gas_heater_temperature(320)
 sensor.set_gas_heater_duration(150)
 sensor.select_gas_heater_profile(0)
 
-start_time = time.time()
-curr_time = time.time()
-burn_in_time = 60
 
-burn_in_data = []
 
 bus = smbus.SMBus(1)
 
@@ -70,6 +66,11 @@ app = Flask(__name__)
 
 @app.route('/') # this tells the program what url triggers the function when a request is made
 def index():
+    start_time = time.time()
+    curr_time = time.time()
+    burn_in_time = 60
+
+    burn_in_data = []
     while curr_time - start_time < burn_in_time:
         curr_time = time.time()
         if sensor.get_sensor_data() and sensor.data.heat_stable:
