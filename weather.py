@@ -20,7 +20,7 @@ import bme680 # import bme680 library
 import time
 import subprocess
 
-subprocess.call(["echo", "Webserver address: $(hostname -I) :5000"])
+subprocess.call(["echo", "hostname -I"])
 
  #echo Webserver address: $(hostname -I):5000
 
@@ -37,6 +37,36 @@ sensor.set_gas_status(bme680.ENABLE_GAS_MEAS)
 sensor.set_gas_heater_temperature(320)
 sensor.set_gas_heater_duration(150)
 sensor.select_gas_heater_profile(0)
+
+start_time = time.time()
+curr_time = time.time()
+burn_in_time = 300
+
+burn_in_data = []
+
+try:
+    # Collect gas resistance burn-in values, then use the average
+    # of the last 50 values to set the upper limit for calculating
+    # gas_baseline.
+    print("Collecting gas resistance burn-in data for 5 mins\n")
+    while curr_time - start_time < burn_in_time:
+        curr_time = time.time()
+        if sensor.get_sensor_data() and sensor.data.heat_stable:
+            gas = sensor.data.gas_resistance
+            burn_in_data.append(gas)
+            print("Gas: {0} Ohms".format(gas))
+            time.sleep(1)
+
+    gas_baseline = sum(burn_in_data[-50:]) / 50.0
+
+    # Set the humidity baseline to 40%, an optimal indoor humidity.
+    hum_baseline = 40.0
+
+    # This sets the balance between humidity and gas reading in the
+    # calculation of air_quality_score (25:75, humidity:gas)
+    hum_weighting = 0.25
+
+    print("Gas baseline: {0} Ohms, humidity baseline: {1:.2f} %RH\n".format(gas_baseline, hum_baseline))
 
 
 bus = smbus.SMBus(1)
@@ -70,11 +100,35 @@ app = Flask(__name__)
 @app.route('/') # this tells the program what url triggers the function when a request is made
 def index():
     try:
-        sensor.get_sensor_data()
-        temp_score = sensor.data.temperature
-        press_score = sensor.data.pressure
-        hum_score = '{:.1f}'.format(sensor.data.humidity)
-        air_quality_score = 100
+        if sensor.get_sensor_data() and sensor.data.heat_stable:
+            gas = sensor.data.gas_resistance
+            gas_offset = gas_baseline - gas
+
+            hum = sensor.data.humidity
+            hum_offset = hum - hum_baseline
+
+            # Calculate hum_score as the distance from the hum_baseline.
+            if hum_offset > 0:
+                hum_score = (100 - hum_baseline - hum_offset) / (100 - hum_baseline) * (hum_weighting * 100)
+
+            else:
+                hum_score = (hum_baseline + hum_offset) / hum_baseline * (hum_weighting * 100)
+
+            # Calculate gas_score as the distance from the gas_baseline.
+            if gas_offset > 0:
+                gas_score = (gas / gas_baseline) * (100 - (hum_weighting * 100))
+
+            else:
+                gas_score = 100 - (hum_weighting * 100)
+
+            # Calculate air_quality_score.
+            air_quality_score = hum_score + gas_score
+
+#        sensor.get_sensor_data()
+#        temp_score = sensor.data.temperature
+#        press_score = sensor.data.pressure
+#        hum_score = '{:.1f}'.format(sensor.data.humidity)
+#        air_quality_score = 100
 
     except:
         hum_score = 0
