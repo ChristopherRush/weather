@@ -81,7 +81,7 @@ Flask had a specific file structure that needs to be met in order for all the fi
 
 For further information visit http://exploreflask.com/en/latest/organizing.html
 
-
+running 'debug=True' causes the server to run with the reloader, therfore the app is restarted in a new process by the reloader process.
 
 ### Weather Station Project install
 
