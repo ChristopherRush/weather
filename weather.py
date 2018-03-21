@@ -106,7 +106,8 @@ def index():
 
             # Calculate air_quality_score.
         air_quality_score = hum_score + gas_score
-'''     air_quality_score = 100   
+'''
+        air_quality_score = 100   
         hum = sensor.data.humidity
         temp_score = sensor.data.temperature
         press_score = sensor.data.pressure
