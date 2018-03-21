@@ -57,7 +57,7 @@ try:
     # calculation of air_quality_score (25:75, humidity:gas)
     hum_weighting = 0.25
 
-    print("Gas baseline: {0} Ohms, humidity baseline: {1:.2f} %RH\n".format(gas_baseline, hum_baseline))
+    #print("Gas baseline: {0} Ohms, humidity baseline: {1:.2f} %RH\n".format(gas_baseline, hum_baseline))
 
     while True:
         if sensor.get_sensor_data() and sensor.data.heat_stable:
