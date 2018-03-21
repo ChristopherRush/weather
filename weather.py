@@ -22,8 +22,6 @@ import subprocess
 
 subprocess.call(["echo", "hostname -I"])
 
- #echo Webserver address: $(hostname -I):5000
-
 
 
 sensor = bme680.BME680() #create bme680 object
@@ -185,9 +183,10 @@ def index():
 
 if __name__ == '__main__':
         app.run(debug=False, host='0.0.0.0')
-while True:
-    gas = sensor.data.gas_resistance
-    sleep(1)
+        while True:
+            gas = sensor.data.gas_resistance
+            print("Gas: {0} Ohms".format(gas))
+            sleep(1)
 
 
         #app.config['SERVER_NAME'] = 'myapp.local'
