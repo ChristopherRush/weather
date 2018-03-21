@@ -105,7 +105,7 @@ def index():
             gas = sensor.data.gas_resistance
             gas_offset = gas_baseline - gas
 
-            hum = sensor.data.humidity
+            hum_score = sensor.data.humidity
             hum_offset = hum - hum_baseline
 
             # Calculate hum_score as the distance from the hum_baseline.
@@ -126,8 +126,8 @@ def index():
             air_quality_score = hum_score + gas_score
 
 #        sensor.get_sensor_data()
-#        temp_score = sensor.data.temperature
-#        press_score = sensor.data.pressure
+            temp_score = sensor.data.temperature
+            press_score = sensor.data.pressure
 #        hum_score = '{:.1f}'.format(sensor.data.humidity)
 #        air_quality_score = 100
 
