@@ -60,7 +60,7 @@ app = Flask(__name__)
 
 @app.route('/') # this tells the program what url triggers the function when a request is made
 def index():
-    try:
+'''    try:
 
         start_time = time.time()
         curr_time = time.time()
@@ -74,8 +74,6 @@ def index():
                 burn_in_data.append(gas)
                 #print("Gas: {0} Ohms".format(gas))
                 time.sleep(1)
-
-
 
 
         gas_baseline = sum(burn_in_data[-50:]) / 50.0
@@ -108,6 +106,7 @@ def index():
 
             # Calculate air_quality_score.
         air_quality_score = hum_score + gas_score
+'''     air_quality_score = 100   
         hum = sensor.data.humidity
         temp_score = sensor.data.temperature
         press_score = sensor.data.pressure
