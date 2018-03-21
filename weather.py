@@ -170,7 +170,7 @@ def index():
     return render_template('index.html', **templateData) #when a html request has been made return these values
 @app.after_request
 def after_request(response):
-    print"here"(request)
+    print"here"
 
 
 if __name__ == '__main__':
