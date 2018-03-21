@@ -13,6 +13,6 @@ python setup.py install
 cd ..
 sudo apt-get install pijuice-gui -y
 
-cd ..
+curl https://get.pimoroni.com/bme680 | bash
 
 git clone https://github.com/ChristopherRush/weather.git
