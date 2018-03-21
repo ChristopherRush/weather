@@ -174,7 +174,7 @@ def after_request(response):
 
 
 if __name__ == '__main__':
-        app.run(debug=False, host='$hostname -I')
+        app.run(debug=False, host='0.0.0.0', port=5000)
 
 
         #app.config['SERVER_NAME'] = 'myapp.local'
