@@ -67,7 +67,8 @@ try:
     hum_weighting = 0.25
 
     print("Gas baseline: {0} Ohms, humidity baseline: {1:.2f} %RH\n".format(gas_baseline, hum_baseline))
-
+except:
+    pass
 
 bus = smbus.SMBus(1)
 
