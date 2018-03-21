@@ -18,13 +18,8 @@ import Adafruit_BMP.BMP085 as BMP085 #Works for both the BMP085 and BMP180 senso
 import Adafruit_DHT # this library works for DHT11 DHT22 and AM2302 sensors
 import bme680 # import bme680 library
 import time
-import subprocess
-from gas_burnin import air_quality_score
+#from gas_burnin import air_quality_score
 
-subprocess.call(["echo", "hostname -I"])
-
-print"Waiting 5 mins for air quality burn in data"
-time.sleep(300)
 
 
 sensor = bme680.BME680() #create bme680 object
@@ -38,6 +33,12 @@ sensor.set_gas_status(bme680.ENABLE_GAS_MEAS)
 sensor.set_gas_heater_temperature(320)
 sensor.set_gas_heater_duration(150)
 sensor.select_gas_heater_profile(0)
+
+start_time = time.time()
+curr_time = time.time()
+burn_in_time = 60
+
+burn_in_data = []
 
 bus = smbus.SMBus(1)
 
@@ -59,6 +60,46 @@ sensor.get_sensor_data()
 
 pin = 4 #DHT22 data pin on the raspberry pi
 
+def read_air_quality():
+    while curr_time - start_time < burn_in_time:
+        curr_time = time.time()
+        if sensor.get_sensor_data() and sensor.data.heat_stable:
+            gas = sensor.data.gas_resistance
+            burn_in_data.append(gas)
+            #print("Gas: {0} Ohms".format(gas))
+            time.sleep(1)
+    gas_baseline = sum(burn_in_data[-50:]) / 50.0
+
+    # Set the humidity baseline to 40%, an optimal indoor humidity.
+    hum_baseline = 40.0
+
+    # This sets the balance between humidity and gas reading in the
+    # calculation of air_quality_score (25:75, humidity:gas)
+    hum_weighting = 0.25
+
+    gas = sensor.data.gas_resistance
+    gas_offset = gas_baseline - gas
+
+    hum = sensor.data.humidity
+    hum_offset = hum - hum_baseline
+
+    # Calculate hum_score as the distance from the hum_baseline.
+    if hum_offset > 0:
+        hum_score = (100 - hum_baseline - hum_offset) / (100 - hum_baseline) * (hum_weighting * 100)
+
+    else:
+        hum_score = (hum_baseline + hum_offset) / hum_baseline * (hum_weighting * 100)
+
+        # Calculate gas_score as the distance from the gas_baseline.
+    if gas_offset > 0:
+        gas_score = (gas / gas_baseline) * (100 - (hum_weighting * 100))
+
+    else:
+        gas_score = 100 - (hum_weighting * 100)
+
+        # Calculate air_quality_score.
+        air_quality_score = hum_score + gas_score
+
 #temp = sensor.read_temperature()
 #pressure = sensor.read_pressure()
 #altitude = sensor.read_altitude()
@@ -68,10 +109,10 @@ app = Flask(__name__)
 @app.route('/') # this tells the program what url triggers the function when a request is made
 def index():
     try:
-
-            hum = sensor.data.humidity
-            temp_score = sensor.data.temperature
-            press_score = sensor.data.pressure
+        read_air_quality()
+        hum = sensor.data.humidity
+        temp_score = sensor.data.temperature
+        press_score = sensor.data.pressure
 
 
     except:

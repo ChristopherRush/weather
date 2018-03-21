@@ -47,7 +47,7 @@ try:
             burn_in_data.append(gas)
             #print("Gas: {0} Ohms".format(gas))
             time.sleep(1)
-
+    print "Burn in time complete"
     gas_baseline = sum(burn_in_data[-50:]) / 50.0
 
     # Set the humidity baseline to 40%, an optimal indoor humidity.
