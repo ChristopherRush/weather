@@ -17,7 +17,7 @@ import Adafruit_BMP.BMP085 as BMP085 #Works for both the BMP085 and BMP180 senso
 import Adafruit_DHT # this library works for DHT11 DHT22 and AM2302 sensors
 import bme680 # import bme680 library
 import time
-from flask import Flask, request
+from flask import request
 #from gas_burnin import air_quality_score
 
 
@@ -170,7 +170,7 @@ def index():
     return render_template('index.html', **templateData) #when a html request has been made return these values
 @app.after_request
 def after_request(response):
-    print"here"
+    print"here"(request)
 
 
 if __name__ == '__main__':
