@@ -60,45 +60,7 @@ sensor.get_sensor_data()
 
 pin = 4 #DHT22 data pin on the raspberry pi
 
-def read_air_quality():
-    while curr_time - start_time < burn_in_time:
-        curr_time = time.time()
-        if sensor.get_sensor_data() and sensor.data.heat_stable:
-            gas = sensor.data.gas_resistance
-            burn_in_data.append(gas)
-            #print("Gas: {0} Ohms".format(gas))
-            time.sleep(1)
-    gas_baseline = sum(burn_in_data[-50:]) / 50.0
 
-    # Set the humidity baseline to 40%, an optimal indoor humidity.
-    hum_baseline = 40.0
-
-    # This sets the balance between humidity and gas reading in the
-    # calculation of air_quality_score (25:75, humidity:gas)
-    hum_weighting = 0.25
-
-    gas = sensor.data.gas_resistance
-    gas_offset = gas_baseline - gas
-
-    hum = sensor.data.humidity
-    hum_offset = hum - hum_baseline
-
-    # Calculate hum_score as the distance from the hum_baseline.
-    if hum_offset > 0:
-        hum_score = (100 - hum_baseline - hum_offset) / (100 - hum_baseline) * (hum_weighting * 100)
-
-    else:
-        hum_score = (hum_baseline + hum_offset) / hum_baseline * (hum_weighting * 100)
-
-        # Calculate gas_score as the distance from the gas_baseline.
-    if gas_offset > 0:
-        gas_score = (gas / gas_baseline) * (100 - (hum_weighting * 100))
-
-    else:
-        gas_score = 100 - (hum_weighting * 100)
-
-        # Calculate air_quality_score.
-        air_quality_score = hum_score + gas_score
 
 #temp = sensor.read_temperature()
 #pressure = sensor.read_pressure()
@@ -109,7 +71,43 @@ app = Flask(__name__)
 @app.route('/') # this tells the program what url triggers the function when a request is made
 def index():
     try:
-        read_air_quality()
+        while curr_time - start_time < burn_in_time:
+            curr_time = time.time()
+            if sensor.get_sensor_data() and sensor.data.heat_stable:
+                gas = sensor.data.gas_resistance
+                burn_in_data.append(gas)
+                #print("Gas: {0} Ohms".format(gas))
+                time.sleep(1)
+        gas_baseline = sum(burn_in_data[-50:]) / 50.0
+
+        # Set the humidity baseline to 40%, an optimal indoor humidity.
+        hum_baseline = 40.0
+
+        # This sets the balance between humidity and gas reading in the
+        # calculation of air_quality_score (25:75, humidity:gas)
+        hum_weighting = 0.25
+
+        gas = sensor.data.gas_resistance
+        gas_offset = gas_baseline - gas
+
+        hum = sensor.data.humidity
+        hum_offset = hum - hum_baseline
+        # Calculate hum_score as the distance from the hum_baseline.
+        if hum_offset > 0:
+            hum_score = (100 - hum_baseline - hum_offset) / (100 - hum_baseline) * (hum_weighting * 100)
+
+        else:
+            hum_score = (hum_baseline + hum_offset) / hum_baseline * (hum_weighting * 100)
+
+            # Calculate gas_score as the distance from the gas_baseline.
+        if gas_offset > 0:
+            gas_score = (gas / gas_baseline) * (100 - (hum_weighting * 100))
+
+        else:
+            gas_score = 100 - (hum_weighting * 100)
+
+            # Calculate air_quality_score.
+        air_quality_score = hum_score + gas_score
         hum = sensor.data.humidity
         temp_score = sensor.data.temperature
         press_score = sensor.data.pressure
