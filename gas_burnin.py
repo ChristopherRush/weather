@@ -45,7 +45,7 @@ try:
         if sensor.get_sensor_data() and sensor.data.heat_stable:
             gas = sensor.data.gas_resistance
             burn_in_data.append(gas)
-            print("Gas: {0} Ohms".format(gas))
+            #print("Gas: {0} Ohms".format(gas))
             time.sleep(1)
 
     gas_baseline = sum(burn_in_data[-50:]) / 50.0
