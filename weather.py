@@ -70,14 +70,17 @@ app = Flask(__name__)
 
 @app.route('/') # this tells the program what url triggers the function when a request is made
 def index():
+    while curr_time - start_time < burn_in_time:
+        curr_time = time.time()
+        if sensor.get_sensor_data() and sensor.data.heat_stable:
+            gas = sensor.data.gas_resistance
+            burn_in_data.append(gas)
+            #print("Gas: {0} Ohms".format(gas))
+            time.sleep(1)
+
+
     try:
-        while curr_time - start_time < burn_in_time:
-            curr_time = time.time()
-            if sensor.get_sensor_data() and sensor.data.heat_stable:
-                gas = sensor.data.gas_resistance
-                burn_in_data.append(gas)
-                #print("Gas: {0} Ohms".format(gas))
-                time.sleep(1)
+
         gas_baseline = sum(burn_in_data[-50:]) / 50.0
 
         # Set the humidity baseline to 40%, an optimal indoor humidity.
