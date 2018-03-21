@@ -186,7 +186,7 @@ if __name__ == '__main__':
         while True:
             gas = sensor.data.gas_resistance
             print("Gas: {0} Ohms".format(gas))
-            sleep(1)
+            time.sleep(1)
 
 
         #app.config['SERVER_NAME'] = 'myapp.local'
