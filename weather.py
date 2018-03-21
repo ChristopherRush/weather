@@ -17,7 +17,7 @@ import Adafruit_BMP.BMP085 as BMP085 #Works for both the BMP085 and BMP180 senso
 import Adafruit_DHT # this library works for DHT11 DHT22 and AM2302 sensors
 import bme680 # import bme680 library
 import time
-from flash import request
+from flask import request
 #from gas_burnin import air_quality_score
 
 
