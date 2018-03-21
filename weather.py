@@ -17,10 +17,6 @@ import Adafruit_BMP.BMP085 as BMP085 #Works for both the BMP085 and BMP180 senso
 import Adafruit_DHT # this library works for DHT11 DHT22 and AM2302 sensors
 import bme680 # import bme680 library
 import time
-from flask import request
-#from gas_burnin import air_quality_score
-
-
 
 sensor = bme680.BME680() #create bme680 object
 
@@ -33,8 +29,6 @@ sensor.set_gas_status(bme680.ENABLE_GAS_MEAS)
 sensor.set_gas_heater_temperature(320)
 sensor.set_gas_heater_duration(150)
 sensor.select_gas_heater_profile(0)
-
-
 
 bus = smbus.SMBus(1)
 
@@ -168,9 +162,6 @@ def index():
 
     }
     return render_template('index.html', **templateData) #when a html request has been made return these values
-@app.after_request
-def after_request(response):
-    print"here"
 
 
 if __name__ == '__main__':
