@@ -167,10 +167,6 @@ def index():
 
 if __name__ == '__main__':
         app.run(debug=False, host='0.0.0.0')
-        while True:
-            gas = sensor.data.gas_resistance
-            print("Gas: {0} Ohms".format(gas))
-            time.sleep(1)
 
 
         #app.config['SERVER_NAME'] = 'myapp.local'
