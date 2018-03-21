@@ -12,12 +12,12 @@
 #
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-print "start"
 import smbus
 import Adafruit_BMP.BMP085 as BMP085 #Works for both the BMP085 and BMP180 sensors
 import Adafruit_DHT # this library works for DHT11 DHT22 and AM2302 sensors
 import bme680 # import bme680 library
 import time
+from flash import request
 #from gas_burnin import air_quality_score
 
 
@@ -82,7 +82,7 @@ def index():
                 time.sleep(1)
 
 
-    
+
 
         gas_baseline = sum(burn_in_data[-50:]) / 50.0
 
@@ -168,9 +168,13 @@ def index():
 
     }
     return render_template('index.html', **templateData) #when a html request has been made return these values
+@app.after_request
+def after_request(response):
+    print"here"
+
 
 if __name__ == '__main__':
-        app.run(debug=False, host='0.0.0.0')
+        app.run(debug=False, host='$hostname -I')
 
 
         #app.config['SERVER_NAME'] = 'myapp.local'
