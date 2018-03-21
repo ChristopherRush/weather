@@ -19,7 +19,7 @@ import Adafruit_DHT # this library works for DHT11 DHT22 and AM2302 sensors
 import bme680 # import bme680 library
 import time
 import subprocess
-from gas_burin.py import air_quality_score
+import gas_burnin
 
 subprocess.call(["echo", "hostname -I"])
 
