@@ -66,21 +66,23 @@ app = Flask(__name__)
 
 @app.route('/') # this tells the program what url triggers the function when a request is made
 def index():
-    start_time = time.time()
-    curr_time = time.time()
-    burn_in_time = 120
-
-    burn_in_data = []
-    while curr_time - start_time < burn_in_time:
-        curr_time = time.time()
-        if sensor.get_sensor_data() and sensor.data.heat_stable:
-            gas = sensor.data.gas_resistance
-            burn_in_data.append(gas)
-            #print("Gas: {0} Ohms".format(gas))
-            time.sleep(1)
-
-
     try:
+
+        start_time = time.time()
+        curr_time = time.time()
+        burn_in_time = 120
+
+        burn_in_data = []
+        while curr_time - start_time < burn_in_time:
+            curr_time = time.time()
+            if sensor.get_sensor_data() and sensor.data.heat_stable:
+                gas = sensor.data.gas_resistance
+                burn_in_data.append(gas)
+                #print("Gas: {0} Ohms".format(gas))
+                time.sleep(1)
+
+
+    
 
         gas_baseline = sum(burn_in_data[-50:]) / 50.0
 
