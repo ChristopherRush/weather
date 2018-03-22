@@ -33,10 +33,16 @@ This project runs on the latest version of [Raspbian OS](https://www.raspberrypi
 
 Just run the following line in the terminal to automatically install all the libraries and project files to the Raspberry Pi.
 
+Raspbian OS Install Script:
 ```bash
 # Run this line and the weather station will be setup and installed
 curl -sSL https://raw.githubusercontent.com/ChristopherRush/weather/master/install.sh | sudo bash
 ```
+Raspbian Lite Install script:
+```bash
+curl -sSL https://raw.githubusercontent.com/ChristopherRush/weather/master/install_lite.sh | sudo #!/usr/bin/env bash
+```
+
 
 ### Adafruit BMP180 Library
 
