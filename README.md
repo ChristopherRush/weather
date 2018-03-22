@@ -5,7 +5,7 @@
 
 ![weather station gui](https://www.pi-supply.com/wp-content/uploads/2018/02/Screen-Shot-2018-02-14-at-17.10.44.png)
 
-This project uses the Adafruit BMP180 pressure sensor and also the DHT22 temperature/humidity sensor to create a basic weather station using the Raspberry Pi. The front end of the weather station uses a web server provided by Flask and programmed in Python. The interface is done using a javascript plugin called [JustGauge](http://justgage.com), which is fully customisable.
+This project uses the Adafruit BMP180, DHT22 or BME680 module to create a basic weather station using the Raspberry Pi and PiJuice HAT. The front end of the weather station uses a web server provided by Flask and programmed in Python. The interface is done using a javascript plugin called [JustGauge](http://justgage.com), which is fully customisable.
 
 ## Hardware setup
 
@@ -17,6 +17,8 @@ For this weather station project you will require the following parts:
 - DHT22 Temperature & Humidity sensor
   - 4.7k resistor
 - Adafruit BMP180 Pressure sensor (discontinued)
+- PiJuice
+- PiJuice Solar Panel
 
 All sensors can be Plug 'n' Play as the program is running (Not recommended).
 
@@ -52,11 +54,24 @@ cd Adafruit_Python_DHT
 sudo python setup.py install
 ```
 
+### Pimoroni BME680 Library
+
+Library install for Python 3:
+```bash
+sudo pip3 install bme680
+```
+Library Install for Python 2:
+```bash
+sudo pip2 install bme680
+```
+
 ### PiJuice GUI
 
 ```bash
 sudo apt-get install pijuice-gui
 ```
+
+
 
 ### Flask
 
@@ -184,7 +199,7 @@ sudo apt-get install pijuice-base
 
 ### Adjusting timings
 
-
+### Run script at startup
 
 
 ## Troubleshooting
