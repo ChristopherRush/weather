@@ -40,7 +40,7 @@ curl -sSL https://raw.githubusercontent.com/ChristopherRush/weather/master/insta
 ```
 Raspbian Lite Install script:
 ```bash
-curl -sSL https://raw.githubusercontent.com/ChristopherRush/weather/master/install_lite.sh | sudo #!/usr/bin/env bash
+curl -sSL https://raw.githubusercontent.com/ChristopherRush/weather/master/install_lite.sh | sudo bash
 ```
 
 
