@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+sudo apt-get install git python2-pip python3-pip
+
 git clone https://github.com/adafruit/Adafruit_Python_BMP.git
 cd Adafruit_Python_BMP
 python setup.py install
