@@ -71,14 +71,6 @@ Library Install for Python 2:
 sudo pip2 install bme680
 ```
 
-### PiJuice GUI
-
-```bash
-sudo apt-get install pijuice-gui
-```
-
-
-
 ### Flask
 
 [Flask](http://flask.pocoo.org) is a lightweight web framework that runs using Python programming language. We will be using Flask to create a web server that can host a web page locally on the Raspberry Pi and then can be accessible over the network from any other device on that same network.
@@ -209,3 +201,30 @@ sudo apt-get install pijuice-base
 
 
 ## Troubleshooting
+
+- **Battery:**
+  - Battery Charge - 0-100%
+  - Battery Voltage - Current battery voltage level
+  - Battery Status:
+    - **NOT_PRESENT** - Battery is not detected or not installed
+    - **CHARGING_FROM_IN** - Battery is charging from PiJuice USB power connector
+    - **CHARGING_FROM_5V_IO** - Battery is charging from GPIO pin (Will occur if powered through Raspberry Pi power connector)
+    - **NORMAL** - Battery is present but not charging
+- **GPIO power input:**
+  - Voltage provided/received from the GPIO pins
+  - Amperage provided/received from the GPIO pins
+  - GPIO Input Status (Powered from Raspberry Pi)
+    - **NOT_PRESENT** - No power supply connected to GPIO pins (i.e Raspberry Pi)
+    - **BAD** - GPIO power is bad, find an alternative power supply with a higher rating
+    - **WEAK** - GPIO power is weak i.e. power supply cannot charge the PiJuice and provide power to the Raspberry Pi
+    - **PRESENT** - GPIO power is good
+- **USB Micro power input:** - PiJuice Micro USB input status
+  - **NOT_PRESENT** - Power supply is not connected to the PiJuice micro USB connector
+  - **BAD** - Power supply is connected but is not providing enough power
+  - **WEAK** - Power supply is connected but is weak
+  - **PRESENT** - Power supply is connected and is providing good power to the PiJuice
+  - **FAULT:** - Displays any faults
+- **System Switch:** for use with VSYS on J3 to provide power to external devices
+  - **off** - VSYS pin is off
+  - **500mA** - VSYS pin provides up to 500mA of power
+  - **2100mA** - VSYS pin provides up to 2100mA of power
