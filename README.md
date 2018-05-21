@@ -177,54 +177,10 @@ var gauge = new JustGage({
 
 JustGuage plugin is licensed under the MIT license
 
-## PiJuice
-This project using PiJuice as a portable power supply with the additional of a solar cell panel to restore the battery during the daytime or when the sun is available. There is some configuration of the PiJuice which needs to be done in the gui before running the flask web server. The Raspberry Pi needs to be able to shutdown successfully when the battery levels are below 5% and then when the battery has reached a 95% charge it then proceed to boot up again.
+**Red** - R parameter defines color component level of red below 15%\
+**Green** - G parameter defines color component charge level over 50%\
+**Blue** - B parameter defines color component for charging (blink) and fully charged states (constant)\
 
-For further information on the PiJuice project please visit the [GitHub](https://github.com/PiSupply/PiJuice) page.
+**NOTE:** Red LED and Green LED will show the charge status between 15% - 50%\
 
-To install the PiJuice gui simply type in the following command in the terminal Window.
-```bash
-sudo apt-get install pijuice-gui
-```
-There is also a light version, which does not require the gui but rather using the command line interface, which some users may find more beneficial.
-```bash
-sudo apt-get install pijuice-base
-```
-
-### PiJuice GUI Configuration
-
-### PiJuice Core Configuration
-
-### Adjusting timings
-
-### Run script at startup
-
-
-## Troubleshooting
-
-- **Battery:**
-  - Battery Charge - 0-100%
-  - Battery Voltage - Current battery voltage level
-  - Battery Status:
-    - **NOT_PRESENT** - Battery is not detected or not installed
-    - **CHARGING_FROM_IN** - Battery is charging from PiJuice USB power connector
-    - **CHARGING_FROM_5V_IO** - Battery is charging from GPIO pin (Will occur if powered through Raspberry Pi power connector)
-    - **NORMAL** - Battery is present but not charging
-- **GPIO power input:**
-  - Voltage provided/received from the GPIO pins
-  - Amperage provided/received from the GPIO pins
-  - GPIO Input Status (Powered from Raspberry Pi)
-    - **NOT_PRESENT** - No power supply connected to GPIO pins (i.e Raspberry Pi)
-    - **BAD** - GPIO power is bad, find an alternative power supply with a higher rating
-    - **WEAK** - GPIO power is weak i.e. power supply cannot charge the PiJuice and provide power to the Raspberry Pi
-    - **PRESENT** - GPIO power is good
-- **USB Micro power input:** - PiJuice Micro USB input status
-  - **NOT_PRESENT** - Power supply is not connected to the PiJuice micro USB connector
-  - **BAD** - Power supply is connected but is not providing enough power
-  - **WEAK** - Power supply is connected but is weak
-  - **PRESENT** - Power supply is connected and is providing good power to the PiJuice
-  - **FAULT:** - Displays any faults
-- **System Switch:** for use with VSYS on J3 to provide power to external devices
-  - **off** - VSYS pin is off
-  - **500mA** - VSYS pin provides up to 500mA of power
-  - **2100mA** - VSYS pin provides up to 2100mA of power
+* **USER LED**. When LED is configured as User LED it can be directly controlled with User software via command interface. Initial PiJuice power on User LED state is defined with R, G, and B brightness level parameters.
