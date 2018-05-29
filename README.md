@@ -262,13 +262,13 @@ The buttons also have some special functions, which help when debugging the PiJu
 
 You can even trigger different events for a press, release, single press, double press and two lengths of long press - you can even configure the length of time these long presses would take before triggering the event. As you can see the first button is already configured for system power functionality and we would highly recommend that at least one of the buttons is configured to these settings or you may have issues turning your PiJuice on and off.
 
-![pijuice buttons](https://drive.google.com/uc?id=1_zkCQWLH857GTilGG4xHD8KJzcRxyBcJ)
+![pijuice buttons](https://drive.google.com/uc?id=1l4-ED-NaKrpxU8fwHwjcotSP9aV9odpM)
 
-![pijuice cli buttons menu](https://drive.google.com/uc?id=1Th3XOR0Pw66iDhc35TnfREcH5rJWRgra)
+![pijuice cli buttons menu](https://drive.google.com/uc?id=10ES3CMU2HTqXaJbrk0jOGkLSYRY7c8HW)
 
 In order to program one of the buttons, first select which button you would like to use to trigger and event. In the next menu you can program the type of button press you would like to use from the following settings:
 
-![pijuice cli buttons options](https://drive.google.com/uc?id=1bHnXgmZCR4CQWyilgxCJwembWNUVcan9)
+![pijuice cli buttons options](https://drive.google.com/uc?id=1inpN5y9n1oPbub-25DgAST0rrtve5AEk)
 
 **PRESS** - Triggered immediately after button is pressed
 **RELEASE** - Triggered immediately after button is released
@@ -279,7 +279,7 @@ In order to program one of the buttons, first select which button you would like
 
 In the next menu option if you select one of the above you can change the type of user function that you wish to trigger when the button is pressed.
 
-![pijuice cli buttons functions](https://drive.google.com/uc?id=1oYC9A2ibxPGMb9oyvusf_mPTXRWNWYgE)
+![pijuice cli buttons functions](https://drive.google.com/uc?id=1hMF9mAob28p5Ktv5G572rBzOy-322pbc)
 
 **NO_FUNC** - Does nothing
 **HARD_FUNC_POWER_ON** - Switches on the Raspberry Pi by applying power to the GPIO pins
@@ -300,9 +300,9 @@ To set the Parameter of the button press simply enter its value in milliseconds 
 
 Just like the buttons, the LEDS are also configurable on the PiJuice and there are two of them in total. The LEDs are surface mount RGB LEDs and can be configured in a number of different colours aside from the preset primary colours in use.
 
-![pijuice cli leds](https://drive.google.com/uc?id=1kzXigQUiuRV_sDB8Ne_N4hdH_Rqqi9YR)
+![pijuice cli leds](https://drive.google.com/uc?id=1hmamZh7EiUqVaxzxvZxj3vv5reivEzo3)
 
-![pijuice cli leds](https://drive.google.com/uc?id=1NpqfDmqwxgyX5oPYXBr8isC6DpUDEJBd)
+![pijuice cli leds](https://drive.google.com/uc?id=1Wfwi4mkqOpL9jY_IGonuzEGTaRnmTSlo)
 
 Each LED can be assigned to a predefined function or configured for user software control as User LED. There are two user functions that are available:
 
@@ -318,11 +318,11 @@ Example:
 
 To change the values of LED D2, select D2 from the menu. Then select the USER_LED function and then add your own values to RGB.
 
-![pijuice cli rgb](https://drive.google.com/uc?id=1QUsGoGr6mXpqiuwgvCXAVINCB2PMaSoc)
+![pijuice cli rgb](https://drive.google.com/uc?id=1hHicPkBisva7Bdb2okzkuGvRcezdsbDT)
 
 Once finished making the changes go Back and then select Apply Settings for the changes to take effect.
 
-![pijuice cli save changes](https://drive.google.com/uc?id=18ElbsD_dEIYwJTMORD_QpNSc3gIP0jwy)
+![pijuice cli save changes](https://drive.google.com/uc?id=1blgaqgI3WgEddps6OnhoBrtbDsoWiwKm)
 
 ### Battery Profile
 
@@ -334,15 +334,15 @@ There are a number of built-in battery profile presets such as the ones that wil
 
 To change the battery profile you will need to select **Profile** option and then select from one of the following battery profiles. If you have connected your own battery to to the PiJuice then you will need to select **Custom** from the profile options.
 
-![pijuice cli battery menu](https://drive.google.com/uc?id=1_Ng3PMTIEzNmOCc1pNXN086f-96qmNHD)
+![pijuice cli battery menu](https://drive.google.com/uc?id=1J49Z8I8kxt2qgesf6DDaPqU7SO7W2xAj)
 
 Before you can start changing the values of the battery profile you will need to make sure that you select **Custom** from the **Battery Settings** menu, when it is selected you will see a cross in the box.
 
-![pijuice cli battery profile](https://drive.google.com/uc?id=18oYuDL09o-kznBYvXoIGUyTlU7YUD_6R)
+![pijuice cli battery profile](https://drive.google.com/uc?id=1rprCTtOCS7vSrpXzTwb-Bv4cMozYks0K)
 
 There is an option at the end of the menu which allows you to set weather your battery had a built-in NTC temperature sensor. An NTC temperature sensor will allow you to monitor the battery temperature for charging and is ultimately there for safety reasons. If your battery does not have an NTC temperature sensor then you can disable this option from the menu **Temperature sense**.
 
-![pijuice cli battery NTC](https://drive.google.com/uc?id=1gwg5lclekKJK46J-kUO5_UQzQT2WxKyQ)
+![pijuice cli battery NTC](https://drive.google.com/uc?id=1KCwpTqoB3VJkupocsFzWA0DtNhnO83aC)
 
 Any changes made to the battery profile must be saved using the Apply Settings option.
 
@@ -350,7 +350,7 @@ Any changes made to the battery profile must be saved using the Apply Settings o
 
 The microcontroller on the PiJuice board had a number of available Input/Output pins that we can use in our projects. These pins are populated on a female header P3, which is next to the battery.
 
-![pijuice cli io menu](https://drive.google.com/uc?id=1GdMCR7TA3QQ-NxgseGec8wE5MvcBZNDu)
+![pijuice cli io menu](https://drive.google.com/uc?id=1cLDQqoKIbfVDVZUbPJeNWeqJP3SYGCkO)
 
 This menu option provides configuration for two IO port pin, IO1 and IO2. You can configure the pins to one of the pre-defined modes below:
 
@@ -365,21 +365,21 @@ PULLDOWN or PULLUP. Use status function SetIoDigitalOutput() to read input value
 
 In the menu you can select from two options, **Mode** and **Pull**.
 
-![pijuice cli io options](https://drive.google.com/uc?id=1WBEH5y5QO9OrKNGIESZZq2WeJVEMJdFN)
+![pijuice cli io options](https://drive.google.com/uc?id=1APgR0q9YuRMKDPSiP-IlXcy7VuoKpbU0)
 
 **Mode** provides a list of modes that you can select as mentioned previously above.
 
-![pijuice cli io modes](https://drive.google.com/uc?id=1bi8bUnlco-TRuHFQoRGFQrnGkoTyVoR0)
+![pijuice cli io modes](https://drive.google.com/uc?id=1ZrJlfLyZ0BygZV3McjEnSLshDiW2FdyS)
 
 **Pull**, allows you to select the type of resistor pull for that particular pin. A **PULLUP** configuration will always default to 5V and a **PULLDOWN** will always default to GND.
 
-![pijuice cli io pull](https://drive.google.com/uc?id=1Y33C4qMWPFYr2Y-gXBOye8zDj2gSInR1)
+![pijuice cli io pull](https://drive.google.com/uc?id=1A3n0x8IGOVR-6HirhBuT0MbsO4B4Qgot)
 
 ### Wakeup Alarm
 
 In this menu you can set the Raspberry Pi to automatically wakeup according to a schedule. This menu can be particular useful for remote monitoring application where the Raspberry Pi will wakeup, run a script and then go to sleep again until next time.
 
-![pijuice cli wakeup](https://drive.google.com/uc?id=1duvwtM2o7upyW5iuIhloMQDz1M36_w4i)
+![pijuice cli wakeup](https://drive.google.com/uc?id=1JEyqpuBVf2yHHUrwn9fHUhoANJJxXUup)
 
 First thing you will need to do it set the system time, which will synchronise and update the internal clock. This is important to make sure you Raspberry Pi will wakeup at the correct time/day set. Simply select the Set system time option.
 
@@ -393,4 +393,4 @@ In the options following this you can set your alarm by entering the Day, Hour, 
 
 From time to time we are constantly improving the software and firmware on the PiJuice HAT board. In this menu you can check if there is an Firmware update available and if there is then you can update to the latest version.
 
-![pijuice cli firmware](https://drive.google.com/uc?id=16bLZVybUyZ_oXtaNWHDQ8K9UvP5os-kd)
+![pijuice cli firmware](https://drive.google.com/uc?id=1CDgqbRn0zeU6Rh_7MsNIuP71x7Nc0L-1)
