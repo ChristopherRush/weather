@@ -272,24 +272,24 @@ In order to program one of the buttons, first select which button you would like
 
 **PRESS** - Triggered immediately after button is pressed\
 **RELEASE** - Triggered immediately after button is released\
-**SINGLE PRESS** - Triggered if button is released in time less than configurable timeout after button press.\
-**DOUBLE PRESS** - Triggered if button is double pressed in time less than configurable timeout.\
-**LONG PRESS 1** - Triggered if button is hold pressed hold for configurable time period 1.\
-**LONG PRESS 2** - Triggered if button is hold pressed hold for configurable time period 2.
+**SINGLE PRESS** - Triggered if button is released in time less than configurable timeout after button press\
+**DOUBLE PRESS** - Triggered if button is double pressed in time less than configurable timeout\
+**LONG PRESS 1** - Triggered if button is hold pressed hold for configurable time period 1\
+**LONG PRESS 2** - Triggered if button is hold pressed hold for configurable time period 2
 
 In the next menu option if you select one of the above you can change the type of user function that you wish to trigger when the button is pressed.
 
 ![pijuice cli buttons functions](https://drive.google.com/uc?id=1hMF9mAob28p5Ktv5G572rBzOy-322pbc)
 
-**NO_FUNC** - Does nothing
-**HARD_FUNC_POWER_ON** - Switches on the Raspberry Pi by applying power to the GPIO pins
-**HARD_FUNC_POWER_OFF** - Switches off power to the Raspberry Pi by cutting the power to the GPIO pins (Not recommend)
-**HARD_FUNC_RESET** - Resets power to the Raspberry Pi forcing a reboot
-**SYS_FUNC_HALT** - Halts the system
-**SYS_FUNC_HALT_POW_OFF** - Halts the system then power off the 5V power regulator and system switch is set to off
-**SYS_FUNC_SYS_OFF_HALT** - System is halted and system switch is set to off and system halts
-**SYS_FUNC_REBOOT** - performs a reboot
-**USER_EVENT** - Runs a custom script that it not processed by system task
+**NO_FUNC** - Does nothing\
+**HARD_FUNC_POWER_ON** - Switches on the Raspberry Pi by applying power to the GPIO pins\
+**HARD_FUNC_POWER_OFF** - Switches off power to the Raspberry Pi by cutting the power to the GPIO pins (Not recommend)\
+**HARD_FUNC_RESET** - Resets power to the Raspberry Pi forcing a reboot\
+**SYS_FUNC_HALT** - Halts the system\
+**SYS_FUNC_HALT_POW_OFF** - Halts the system then power off the 5V power regulator and system switch is set to off\
+**SYS_FUNC_SYS_OFF_HALT** - System is halted and system switch is set to off and system halts\
+**SYS_FUNC_REBOOT** - performs a reboot\
+**USER_EVENT** - Runs a custom script that it not processed by system task\
 **USER_FUNC1** - Runs a custom user script
 
 **NOTE: SYS_FUNC_HALT_POW_OFF still provides power to the Raspberry Pi for a further 60 seconds after shutdown**
@@ -354,7 +354,7 @@ The microcontroller on the PiJuice board had a number of available Input/Output 
 
 This menu option provides configuration for two IO port pin, IO1 and IO2. You can configure the pins to one of the pre-defined modes below:
 
-- **NOT_USED:** Set IO pin in neutral configuration (passive input).
+- **NOT_USED:** Set IO pin in neutral configuration (passive input)
 - **ANALOG_IN:** Set IO pin in analog to digital converter mode. In this mode Value can be read with status function GetIoAnalogInput(). Pull has no effect in this mode.
 - **DIGITAL_IN:** Set IO pin in digital input mode. Pull in this mode can be set to NO_PULL,
 PULLDOWN or PULLUP. Use status function SetIoDigitalOutput() to read input value dynamically.
