@@ -270,11 +270,11 @@ In order to program one of the buttons, first select which button you would like
 
 ![pijuice cli buttons options](https://drive.google.com/uc?id=1inpN5y9n1oPbub-25DgAST0rrtve5AEk)
 
-**PRESS** - Triggered immediately after button is pressed
-**RELEASE** - Triggered immediately after button is released
-**SINGLE PRESS** - Triggered if button is released in time less than configurable timeout after button press.
-**DOUBLE PRESS** - Triggered if button is double pressed in time less than configurable timeout.
-**LONG PRESS 1** - Triggered if button is hold pressed hold for configurable time period 1.
+**PRESS** - Triggered immediately after button is pressed\
+**RELEASE** - Triggered immediately after button is released\
+**SINGLE PRESS** - Triggered if button is released in time less than configurable timeout after button press.\
+**DOUBLE PRESS** - Triggered if button is double pressed in time less than configurable timeout.\
+**LONG PRESS 1** - Triggered if button is hold pressed hold for configurable time period 1.\
 **LONG PRESS 2** - Triggered if button is hold pressed hold for configurable time period 2.
 
 In the next menu option if you select one of the above you can change the type of user function that you wish to trigger when the button is pressed.
@@ -308,8 +308,8 @@ Each LED can be assigned to a predefined function or configured for user softwar
 
 **CHARGE STATUS** - LED is configured to signal current charge level of the battery. For level <= 15% red with configurable brightness. For level > 15% and level <=50% mix of red and green with configurable brightness. For level > 50% green with configurable brightness. When battery is charging blinking blue with configurable brightness is added to current charge level color. For full buttery state blue component is steady on. Current D1 LED values:
 
-R: 60/
-G: 60/
+R: 60\
+G: 60\
 B: 100
 
 **USER LED** - When LED is configured as User LED it can be directly controlled with User software via command interface. Initial PiJuice power, on User LED state is defined with R, G, and B brightness level parameters.
