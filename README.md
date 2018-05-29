@@ -177,7 +177,7 @@ var gauge = new JustGage({
 
 JustGuage plugin is licensed under the MIT license
 
-##PiJuice CLI
+## PiJuice CLI
 
 For those users who would rather run their Raspberry Pi using a Lite version of Raspbian or has remote access to the Pi via SSH, we have also designed a handy little command line interface tool, which ultimately replicates the Graphical Interface for PiJuice software.
 
@@ -185,13 +185,13 @@ To launch the PiJuice CLI simply open up the Terminal or from the command line t
 
 `pijuice_cli.py`
 
-![pijuice cli](https://drive.google.com/open?id=1RIa7nDizGsV-tpyNRSFHIiJ64SNR7LeA)
+![pijuice cli](https://drive.google.com/open?id=1bSHhI6uIXOhCBUWUfkAwLAHcVTAm7UbD)
 
 The PiJuice command line interface is an extension of the PiJuice HAT Configuration GUI with the exception that System Task, System Events and User Scripts cannot be configurable from the command line interface. To configure these options you will need to directly modify the JSON file as shown in the next section.
 
 To scroll the menu simply use your arrow keys on your keyboard and press enter to select options or navigate through the menu system.
 
-###Status
+### Status
 This menu shows the current status of the PiJuice including battery levels and charging input method.
 
 ![pijuice cli status](https://drive.google.com/open?id=1vhS2cULuMJNl91DSFq4sGjPAx78uWFKa)
@@ -210,7 +210,7 @@ This menu shows the current status of the PiJuice including battery levels and c
 
 To get new data from the PiJuice you can select Refresh to update the values.
 
-###General
+### General
 
 In the General menu it allows you to configure a lot of the hardware settings for the PiJuice HAT. The only difference with this menu and the GUI is that you cannot change the I2C address for the PiJuice HAT and the built-in RTC.
 
@@ -236,7 +236,7 @@ The **Run pin** configuration allows you to set whether the pogo pin is installe
 
 Don’t forget that when you make changes to any of the hardware settings you must Apply the settings from the menu, otherwise they will not be saved.
 
-###Buttons
+### Buttons
 There are a total of three, user configurable buttons, that you can program to trigger certain events.
 
 The default button functions are:
@@ -296,7 +296,7 @@ In the next menu option if you select one of the above you can change the type o
 
 To set the Parameter of the button press simply enter its value in milliseconds to the Parameter field.
 
-###LEDs
+### LEDs
 
 Just like the buttons, the LEDS are also configurable on the PiJuice and there are two of them in total. The LEDs are surface mount RGB LEDs and can be configured in a number of different colours aside from the preset primary colours in use.
 
@@ -324,7 +324,7 @@ Once finished making the changes go Back and then select Apply Settings for the 
 
 ![pijuice cli save changes](https://drive.google.com/open?id=18ElbsD_dEIYwJTMORD_QpNSc3gIP0jwy)
 
-###Battery Profile
+### Battery Profile
 
 The Battery profile menu allows you to set up the battery profile, which includes all the battery characteristics such as capacity, voltages and temperature. It is very important that the battery profile is set correctly in order for your battery to operate efficiently and correctly monitor the voltage and battery levels.
 
@@ -346,7 +346,7 @@ There is an option at the end of the menu which allows you to set weather your b
 
 Any changes made to the battery profile must be saved using the Apply Settings option.
 
-###IO
+### IO
 
 The microcontroller on the PiJuice board had a number of available Input/Output pins that we can use in our projects. These pins are populated on a female header P3, which is next to the battery.
 
@@ -375,7 +375,7 @@ In the menu you can select from two options, **Mode** and **Pull**.
 
 ![pijuice cli io pull](https://drive.google.com/open?id=1Y33C4qMWPFYr2Y-gXBOye8zDj2gSInR1)
 
-###Wakeup Alarm
+### Wakeup Alarm
 
 In this menu you can set the Raspberry Pi to automatically wakeup according to a schedule. This menu can be particular useful for remote monitoring application where the Raspberry Pi will wakeup, run a script and then go to sleep again until next time.
 
@@ -389,7 +389,7 @@ Next you can enable/disable the wakeup function by checking the Wakeup enabled b
 
 In the options following this you can set your alarm by entering the Day, Hour, minute, second and also if you wish to wake up the Raspberry Pi on a particular weekday or every day or hour. Once you have made the changes you will then need to make sure that you select the Set alarm option to save the alarm settings.
 
-###Firmware
+### Firmware
 
 From time to time we are constantly improving the software and firmware on the PiJuice HAT board. In this menu you can check if there is an Firmware update available and if there is then you can update to the latest version.
 
