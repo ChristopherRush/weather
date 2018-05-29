@@ -185,7 +185,7 @@ To launch the PiJuice CLI simply open up the Terminal or from the command line t
 
 `pijuice_cli.py`
 
-![pijuice cli](https://drive.google.com/open?id=1bSHhI6uIXOhCBUWUfkAwLAHcVTAm7UbD)
+![pijuice cli](https://drive.google.com/uc?id=1bSHhI6uIXOhCBUWUfkAwLAHcVTAm7UbD)
 
 The PiJuice command line interface is an extension of the PiJuice HAT Configuration GUI with the exception that System Task, System Events and User Scripts cannot be configurable from the command line interface. To configure these options you will need to directly modify the JSON file as shown in the next section.
 
@@ -194,7 +194,7 @@ To scroll the menu simply use your arrow keys on your keyboard and press enter t
 ### Status
 This menu shows the current status of the PiJuice including battery levels and charging input method.
 
-![pijuice cli status](https://drive.google.com/open?id=1vhS2cULuMJNl91DSFq4sGjPAx78uWFKa)
+![pijuice cli status](https://drive.google.com/uc?id=1vhS2cULuMJNl91DSFq4sGjPAx78uWFKa)
 
 **Note: It is recommended to use a power supply with a current rating of 2.5A such as the official Raspberry Pi power supply.**
 
