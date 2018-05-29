@@ -214,7 +214,7 @@ To get new data from the PiJuice you can select Refresh to update the values.
 
 In the General menu it allows you to configure a lot of the hardware settings for the PiJuice HAT. The only difference with this menu and the GUI is that you cannot change the I2C address for the PiJuice HAT and the built-in RTC.
 
-![pijuice cli general](https://drive.google.com/uc?id=10VznlXOPuF5C05hjggRYHniWWyfEiqyM)
+![pijuice cli general](https://drive.google.com/uc?id=1Q4QfGhPlpLhG2e_xl6LMomzXw4Yz0B0X)
 
 **GPIO Input Enabled** enables/disables powering the PiJuice HAT from 5V GPIO Input (Raspberry Pi). Enabled by default.
 
