@@ -195,3 +195,36 @@ Add the following to the cron table:
 ```bash
 @reboot /usr/bin/python /home/pi/PiJuice/Software/Test/wakeup_enable.py
 ```
+
+# Update PiJuice firmware
+
+There are two ways in which you can upgrade the firmware for the PiJuice. You can use the command line tool provided here or refer to the [Software section](https://github.com/PiSupply/PiJuice/tree/master/Software) to find out how to perform a firmware update via the GUI.
+
+1. When the Raspberry Pi is powered off remove the PiJuice battery and disconnect all powered
+
+2. Hold down SW3 button whilst connecting the mains power supply to the PiJuice to enter bootloader mode
+
+3. After 10 seconds or so release the SW3 button
+
+4. PiJuice service needs to be stopped with the following command `sudo systemctl stop pijuice.service`
+
+5. pijuiceboot needs to be made executable by running:
+```bash
+chmod 755 pijuiceboot
+```
+or
+```bash
+chmod a+x pijuiceboot
+```
+
+6. Usage:
+```text
+./pijuiceboot i2c_address path_to_firmware_binary
+```
+
+Example:
+```bash
+./pijuiceboot 14 PiJuice-V1.1_2018_01_15.elf.binary
+```
+
+7. Shutdown the Raspberry Pi and remove all power before inserting the battery
