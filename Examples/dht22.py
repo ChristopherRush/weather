@@ -12,6 +12,7 @@ import Adafruit_DHT
 
 # Parse command line parameters.
 pin = 4
+sensor = Adafruit_DHT.DHT22
 
 # Try to grab a sensor reading.  Use the read_retry method which will retry up
 # to 15 times to get a sensor reading (waiting 2 seconds between each retry).
