@@ -56,7 +56,9 @@ def index():
     try:
           # Read the light sensor data
           light_level = ReadChannel(light_channel)
-
+    except: # If the sensor is not connected send null values
+        light_level = 0
+        pass
 
 
     #variables to pass through to the web page
