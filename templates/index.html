@@ -15,19 +15,18 @@
 
     <h1 style="text-align:center;"> Pi Supply Weather Station</h1>
 <div id="wrapper">
-    <h1>Pimoroni BME680 Sensor</h1>
     <div class="block">
-      <div id="gauge6" class="gauge">
+      <div id="gauge1" class="gauge">
         <script>
         var gauge = new JustGage({
-          id: "gauge6",
-          value: {{hum}},
+          id: "gauge1",
+          value: {{light_level}},
           symbol: "%",
           levelColors: ['#EC7063', '#F4D03F', '#58D68D'],
           min: 0,
           decimals: 1,
-          max: 100,
-          title: "Humidity"
+          max: 1024,
+          title: "Light"
         });
       </script>
       </div>
@@ -35,10 +34,10 @@
 
 
     <div class="block">
-      <div id="gauge8" class="gauge">
+      <div id="gauge2" class="gauge">
         <script>
         var gauge8 = new JustGage({
-          id: "gauge8",
+          id: "gauge2",
           value: {{temp_score}},
           symbol: '\u2103',
           levelColors: ['#5DADE2', '#58D68D', '#F4D03F', '#EC7063'],
@@ -51,10 +50,10 @@
       </div>
     </div>
     <div class="block">
-      <div id="gauge9" class="gauge">
+      <div id="gauge3" class="gauge">
         <script>
         var gauge9 = new JustGage({
-          id: "gauge9",
+          id: "gauge3",
           value: {{press_score}},
           symbol: "hPa",
           levelColors: ['#EC7063', '#F4D03F', '#58D68D'],
@@ -66,7 +65,7 @@
       </div>
     </div>
 </div>
-
+<!--
   <div id="wrapper">
         <h1>Adafruit BMP180 Sensor</h1>
         <div class="block">
@@ -154,6 +153,6 @@
         </div>
 
   </div>
-
+-->
   </body>
   </html>

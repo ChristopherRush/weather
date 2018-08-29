@@ -13,63 +13,35 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 import smbus
-import Adafruit_BMP.BMP085 as BMP085 #Works for both the BMP085 and BMP180 sensors
 import Adafruit_DHT # this library works for DHT11 DHT22 and AM2302 sensors
-import bme680 # import bme680 library
 import time
-
-sensor = bme680.BME680() #create bme680 object
-
-sensor.set_humidity_oversample(bme680.OS_2X)
-sensor.set_pressure_oversample(bme680.OS_4X)
-sensor.set_temperature_oversample(bme680.OS_8X)
-sensor.set_filter(bme680.FILTER_SIZE_3)
-
-
-bus = smbus.SMBus(1)
-
-bmp_device = 119 #i2c address in decimal
+import spidev
 
 from flask import Flask, render_template
 
-
-try: #check to see if the device is connected
-
-    bus.read_byte(bmp_device) #if i2c device is connected create device object '''
-    bmp_sensor = BMP085.BMP085()
-except: #do nothing if sensor is not connected
-    pass
-
+# Open SPI bus
+spi = spidev.SpiDev()
+spi.open(0,0)
+spi.max_speed_hz=1000000
 
 dh22_sensor = Adafruit_DHT.DHT22
-sensor.get_sensor_data()
 
 pin = 4 #DHT22 data pin on the raspberry pi
 
+# Define sensor channels
+light_channel = 0
+
+def ReadChannel(channel):
+  adc = spi.xfer2([1,(8+channel)<<4,0])
+  data = ((adc[1]&3) << 8) + adc[2]
+  return data
 
 
-#temp = sensor.read_temperature()
-#pressure = sensor.read_pressure()
-#altitude = sensor.read_altitude()
 
 app = Flask(__name__)
 
 @app.route('/') # this tells the program what url triggers the function when a request is made
 def index():
-    try:
-
-
-        hum = sensor.data.humidity
-        temp_score = sensor.data.temperature
-        press_score = sensor.data.pressure
-
-
-    except:
-        hum = 0
-        temp_score = 0
-        press_score = 0
-        pass
-
 
     try: #check to see if the DHT sensor is connected
         humidity, temperature = Adafruit_DHT.read(dh22_sensor, pin) #get the values from the sensor
@@ -81,34 +53,17 @@ def index():
         temperature = 0
         pass
 
-
-
     try:
-        #if bus.read_byte(0x77): #check to see if the BMP sensor is attached decimal 119 hex 0x77 address
+          # Read the light sensor data
+          light_level = ReadChannel(light_channel)
 
-        temp = bmp_sensor.read_temperature() #read the temperature from the BMP sensor in celcius
-        pressure = bmp_sensor.read_pressure() #read the pressure from the BMP sensor
-        altitude = bmp_sensor.read_altitude() #read teh altitude value from the BMP sensor in meters
-        altitude = '{:.2f}'.format(altitude) #convert the altitude value to two decimal places
-
-    except: #if the device is not connected send null values
-        temp = 0
-        pressure = 0
-        altitude = 0
-        pass
 
 
     #variables to pass through to the web page
     templateData = {
-            'temp' : temp,
-            'pressure' : pressure,
-            'altitude' : altitude,
             'humidity' : humidity,
             'temperature' : temperature,
-            'hum' : hum,
-            'temp_score' : temp_score,
-            'press_score' : press_score
-
+            'light' : light_level
     }
     return render_template('index.html', **templateData) #when a html request has been made return these values
 
