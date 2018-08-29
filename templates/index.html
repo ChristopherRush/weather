@@ -21,7 +21,6 @@
         var gauge = new JustGage({
           id: "gauge1",
           value: {{light}},
-          symbol: "%",
           levelColors: ['#EC7063', '#F4D03F', '#58D68D'],
           min: 0,
           decimals: 1,
@@ -64,57 +63,6 @@
       </script>
       </div>
     </div>
-</div>
-  <div id="wrapper">
-        <h1>Adafruit BMP180 Sensor</h1>
-        <div class="block">
-          <div id="gauge" class="gauge">
-            <script>
-            var gauge = new JustGage({
-              id: "gauge",
-              value: {{temp}},
-              symbol: '\u2103',
-              levelColors: ['#1B94FF', '#FDDC00', '#FF9E00', '#FF3F00'],
-              min: 0,
-              decimals: 1,
-              max: 50,
-              title: "Temperature"
-            });
-          </script>
-          </div>
-        </div>
-
-
-        <div class="block">
-          <div id="gauge2" class="gauge">
-            <script>
-            var gauge2 = new JustGage({
-              id: "gauge2",
-              value: {{pressure}},
-              symbol: "hPa",
-              min: 0,
-              max: 100000,
-              title: "Pressure"
-            });
-          </script>
-          </div>
-        </div>
-
-        <div class="block">
-          <div id="gauge3" class="gauge">
-            <script>
-            var gauge3 = new JustGage({
-              id: "gauge3",
-              value: {{altitude}},
-              symbol: "m",
-              min: 0,
-              decimals: 1,
-              max: 1000,
-              title: "Altitude"
-            });
-          </script>
-          </div>
-        </div>
 </div>
 
 <div id="dht22">
