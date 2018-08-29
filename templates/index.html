@@ -25,44 +25,12 @@
           min: 0,
           decimals: 1,
           max: 1024,
-          title: "Light"
+          title: "Light Sensor"
         });
       </script>
       </div>
     </div>
 
-
-    <div class="block">
-      <div id="gauge2" class="gauge">
-        <script>
-        var gauge8 = new JustGage({
-          id: "gauge2",
-          value: {{temp_score}},
-          symbol: '\u2103',
-          levelColors: ['#5DADE2', '#58D68D', '#F4D03F', '#EC7063'],
-          min: 0,
-          decimals: 1,
-          max: 50,
-          title: "Temperature"
-        });
-      </script>
-      </div>
-    </div>
-    <div class="block">
-      <div id="gauge3" class="gauge">
-        <script>
-        var gauge9 = new JustGage({
-          id: "gauge3",
-          value: {{press_score}},
-          symbol: "hPa",
-          levelColors: ['#EC7063', '#F4D03F', '#58D68D'],
-          min: 500,
-          max: 1100,
-          title: "Pressure"
-        });
-      </script>
-      </div>
-    </div>
 </div>
 
 <div id="dht22">
