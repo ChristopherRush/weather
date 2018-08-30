@@ -83,5 +83,27 @@
         </div>
 
   </div>
+
+  <div id="pijuice">
+           <h1> PiJuice battery</h1>
+          <div class="block">
+                  <div id="gauge6" class="gauge">
+                    <script>
+                    var gauge6 = new JustGage({
+                      id: "gauge6",
+                      value: {{battery}},
+                      symbol: "%",
+                      min: 0,
+                      decimals: 2,
+                      max: 100,
+                      title: "Level"
+                    });
+                  </script>
+                  </div>
+          </div>
+
+
+    </div>
+
   </body>
   </html>
