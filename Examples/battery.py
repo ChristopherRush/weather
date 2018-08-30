@@ -5,6 +5,6 @@ from pijuice import PiJuice
 pijuice = PiJuice(1, 0x14) # Instantiate PiJuice interface object
 data = pijuice.status.GetStatus()["data"]
 
-value = data["battery"]
+value = data["powerInput"]
 
-print value 
+print value
