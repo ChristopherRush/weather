@@ -1,6 +1,7 @@
 #wrapper {
 width: 100%;
-
+float: left;
+clear: left;
 margin-top: 50px;
 }
 
