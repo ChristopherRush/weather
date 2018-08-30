@@ -25,3 +25,9 @@ margin-top: 50px;
      border: 1px solid #ccc;
      margin: 5px;
  }
+
+ #pijuice {
+ float: left;
+ clear: left;
+ margin-top: 50px;
+ }
