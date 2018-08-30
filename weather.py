@@ -90,13 +90,17 @@ def index():
 
     try:
         battery = pijuice.status.GetChargeLevel()["data"]
-        power = pijuice.status.GetStatus()["data"]
-        power = power["powerInput"]
+        status = pijuice.status.GetStatus()["data"]
+        power = status["powerInput"]
+        charge = status["battery"]
     except:
         battery = 0
         power = "Error"
-
+        charge = "Error"
         pass
+
+
+
 
 
     #variables to pass through to the web page
@@ -106,7 +110,8 @@ def index():
             'light' : light_level,
             'temp' : temp,
             'battery' : battery,
-            'power' : power
+            'power' : power,
+            'charge' : charge
     }
     return render_template('index.html', **templateData) #when a html request has been made return these values
 
