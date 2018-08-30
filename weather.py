@@ -17,7 +17,10 @@ import Adafruit_DHT # this library works for DHT11 DHT22 and AM2302 sensors
 import time
 import spidev
 
+from pijuice import PiJuice # Import pijuice module
 from flask import Flask, render_template
+
+pijuice = PiJuice(1, 0x14) # Instantiate PiJuice interface object
 
 # Open SPI bus
 spi = spidev.SpiDev()
@@ -80,10 +83,13 @@ def index():
     try:
          # Read the temperature sensor data
          temp_level = ReadChannel(temp_channel)
-         temp       = ConvertTemp(temp_level,2)
+         temp = ConvertTemp(temp_level,2)
     except:
         temp = 0
         pass
+
+    try:
+
 
 
     #variables to pass through to the web page
