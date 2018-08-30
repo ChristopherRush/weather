@@ -90,7 +90,7 @@ def index():
 
     try:
         battery = pijuice.status.GetChargeLevel()["data"]
-        power = pijuice.status.GetChargeLevel()["powerInput"]
+        power = pijuice.status.GetStatus()["powerInput"]
     except:
         battery = 0
         power = "Error"
