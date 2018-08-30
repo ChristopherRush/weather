@@ -30,12 +30,29 @@ pin = 4 #DHT22 data pin on the raspberry pi
 
 # Define sensor channels
 light_channel = 0
+temp_channel  = 1
 
 def ReadChannel(channel):
   adc = spi.xfer2([1,(8+channel)<<4,0])
   data = ((adc[1]&3) << 8) + adc[2]
   return data
 
+def ConvertTemp(data,places):
+
+  # ADC Value
+  # (approx)  Temp  Volts
+  #    0      -50    0.00
+  #   78      -25    0.25
+  #  155        0    0.50
+  #  233       25    0.75
+  #  310       50    1.00
+  #  465      100    1.50
+  #  775      200    2.50
+  # 1023      280    3.30
+
+  temp = ((data * 330)/float(1023))-50
+  temp = round(temp,places)
+  return temp
 
 
 app = Flask(__name__)
@@ -60,12 +77,21 @@ def index():
         light_level = 0
         pass
 
+    try:
+         # Read the temperature sensor data
+         temp_level = ReadChannel(temp_channel)
+         temp       = ConvertTemp(temp_level,2)
+    except:
+        temp = 0
+        pass
+
 
     #variables to pass through to the web page
     templateData = {
             'humidity' : humidity,
             'temperature' : temperature,
-            'light' : light_level
+            'light' : light_level,
+            'temp' : temp
     }
     return render_template('index.html', **templateData) #when a html request has been made return these values
 

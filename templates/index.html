@@ -32,6 +32,22 @@
       </div>
     </div>
 
+    <h1>TMP36 Temperature Sensor</h1>
+      <div class="block">
+        <div id="gauge2" class="gauge">
+          <script>
+          var gauge = new JustGage({
+            id: "gauge2",
+            value: {{temp}},
+            levelColors: ['#EC7063', '#F4D03F', '#58D68D'],
+            min: 0,
+            decimals: 1,
+            max: 30,
+            title: "TMP36"
+          });
+        </script>
+        </div>
+      </div>
 </div>
 
 <div id="dht22">
