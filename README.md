@@ -1,28 +1,28 @@
-![pi-supply-logo1](https://www.pi-supply.com/wp-content/uploads/2015/11/pi-supply-logo1.png)
-
 
 # Pi Supply Weather Station
 
-![weather station gui](https://www.pi-supply.com/wp-content/uploads/2018/02/Screen-Shot-2018-02-14-at-17.10.44.png)
+This project is designed to show the capabilities fo the PiJuice HAT for a remote weather station application. Used in conjunction with the Raspberry Pi it be used as an off grid weather station provided it has a data connection. This weather station is powered using the PiJuice HAT with the default battery and a 22W solar panel for recharging the battery and allowing continues monitoring over night and when sunlight conditions are low.
 
-This project uses the Adafruit BMP180, DHT22 or BME680 module to create a basic weather station using the Raspberry Pi and PiJuice HAT. The front end of the weather station uses a web server provided by Flask and programmed in Python. The interface is done using a javascript plugin called [JustGauge](http://justgage.com), which is fully customisable.
+This project itself is very simple, with only a few low-cost components we are able to monitor Light levels, temperature and humidity as well as monitoring the status of the PiJuice battery levels. The front end of the weather station uses a web server provided by Flask and programmed in Python. The interface is done using a javascript plugin called [JustGauge](http://justgage.com), which is fully customisable.
+
+The project is a prototype and is designed to get you started with building your very own weather station with the Raspberry Pi and PiJuice HAT. Once tested on a breadboard you can then move it on to our PiCrust Pro HAT for a permanent fixture.
 
 ## Hardware setup
 
 For this weather station project you will require the following parts:
 
+- PiJuice HAT Maker Kit (Excludes components)
 - Raspberry Pi computer
-- Wi-Fi or Ethernet network ability
+- Wi-Fi or Ethernet network capability
 - 8GB microSD card with Raspbian OS
 - DHT22 Temperature & Humidity sensor
   - 4.7k resistor
-- Adafruit BMP180 Pressure sensor (discontinued)
-- PiJuice
+- TMP36 Temperature sensor
+- LDR sensor
+- 2.2K resistor
+- PiJuice HAT
 - PiJuice Solar Panel
-
-All sensors can be Plug 'n' Play as the program is running (Not recommended).
-
-![weather station](https://www.pi-supply.com/wp-content/uploads/2018/02/fritz_bb.png)
+- PiCrust Pro prototyping HAT (optional)
 
 
 ## Software Installation
@@ -43,32 +43,10 @@ Raspbian Lite Install script:
 curl -sSL https://raw.githubusercontent.com/ChristopherRush/weather/master/install_lite.sh | sudo bash
 ```
 
-
-### Adafruit BMP180 Library
-
-```bash
-git clone https://github.com/adafruit/Adafruit_Python_BMP.git
-cd Adafruit_Python_BMP
-sudo python setup.py install
-```
-
 ### Adafruit DHT22 Library
 
 ```bash
-git clone https://github.com/adafruit/Adafruit_Python_DHT.git
-cd Adafruit_Python_DHT
-sudo python setup.py install
-```
-
-### Pimoroni BME680 Library
-
-Library install for Python 3:
-```bash
-sudo pip3 install bme680
-```
-Library Install for Python 2:
-```bash
-sudo pip2 install bme680
+pip install Adafruit_DHT
 ```
 
 ### Flask
@@ -94,7 +72,7 @@ Flask had a specific file structure that needs to be met in order for all the fi
 
 For further information visit http://exploreflask.com/en/latest/organizing.html
 
-running 'debug=True' causes the server to run with the reloader, therfore the app is restarted in a new process by the reloader process.
+running 'debug=True' causes the server to run with the reloader, therefore the app is restarted in a new process by the reloader process.
 
 ### Weather Station Project install
 
@@ -112,7 +90,7 @@ cd weather
 sudo python weather.py
 ```
 
-To view the webpage you will need to go to the Raspberry Pi's IP address on your local network such as http://192.168.0.23 yours may differ. You can find your IP address from the terminal window on the Raspberry Pi by typing in the following command:
+To view the webpage you will need to go to the Raspberry Pi's IP address on your local network such as http://192.168.0.23:5000 yours may differ. You can find your IP address from the terminal window on the Raspberry Pi by typing in the following command:
 
 ```bash
 #Wi-Fi connection
@@ -174,5 +152,4 @@ var gauge = new JustGage({
 </script>
 ```
 
-
-JustGuage plugin is licensed under the MIT license
+JustGage plugin is licensed under the MIT license
