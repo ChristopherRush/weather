@@ -1,5 +1,5 @@
 
-# Pi Supply Weather Station
+# PiJuice Weather Station
 
 This project is designed to show the capabilities fo the PiJuice HAT for a remote weather station application. Used in conjunction with the Raspberry Pi it be used as an off grid weather station provided it has a data connection. This weather station is powered using the PiJuice HAT with the default battery and a 22W solar panel for recharging the battery and allowing continues monitoring over night and when sunlight conditions are low.
 
