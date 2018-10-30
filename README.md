@@ -158,6 +158,20 @@ JustGage plugin is licensed under the MIT license
 
 The PiJuice MCU has a built-in RTC, which is then kept alive by the PiJuice battery. This RTC is primarily used to wakeup the Raspberry Pi at a specific time/date set by you in the PiJuice configuration settings. By default when the PiJuice has a ID EEPROM address of 0x50 the RTC driver is loaded when the Raspberry Pi boots and this can be confirmed by running 'i2cdetect -y 1' from the command line where you will see 'UU' at address 68.
 
+```
+pi@rpi-stretch-full:~ $ i2cdetect -y 1
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:          -- -- -- -- -- -- -- -- -- -- -- -- --
+10: -- -- -- -- 14 -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- -- -- -- -- UU -- -- -- -- -- -- --
+70: -- -- -- -- -- -- -- --                         
+pi@rpi-stretch-full:~ $
+```
+
 If your ID EEPROM address is set to 0x52 (Which you will need to change if stacking another HAT) then you will need to manually load the driver in the `/boot/config.txt` by adding the following line:
 
 ```dtoverlay=i2c-rtc,ds1339```
