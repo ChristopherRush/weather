@@ -154,4 +154,4 @@ var gauge = new JustGage({
 
 JustGage plugin is licensed under the MIT license
 
-![PiJuice_Zero](https://drive.google.com/open?id=1l1uLXDp_rf0GQmAKm7W06QNgxjKIoULq)
+![PiJuice_Zero](https://drive.google.com/uc?id=1l1uLXDp_rf0GQmAKm7W06QNgxjKIoULq)
